@@ -1,0 +1,26 @@
+queue_directory = /var/spool/postfix
+command_directory = /usr/sbin
+daemon_directory = /usr/libexec/postfix
+data_directory = /var/lib/postfix
+mail_owner = postfix
+
+# The value of 'localhost' below is required for CIS compliance
+inet_interfaces = localhost
+
+inet_protocols = all
+mydestination = $myhostname, localhost.$mydomain, localhost
+unknown_local_recipient_reject_code = 550
+alias_maps = hash:/etc/aliases
+alias_database = hash:/etc/aliases
+debug_peer_level = 2
+debugger_command =
+	PATH=/bin:/usr/bin:/usr/local/bin
+	ddd $daemon_directory/$process_name $process_id & sleep 5
+sendmail_path = /usr/bin/sendmail.postfix
+newaliases_path = /usr/bin/newaliases.postfix
+mailq_path = /usr/main/mailq.postfix
+setgid_group = postdrop
+html_directory = no
+manpage_directory = /usr/share/man
+sample_directory = /usr/share/doc/postfix-2.6.6/samples
+readme_directory = /usr/share/doc/postfix-2.6.6/README_FILES

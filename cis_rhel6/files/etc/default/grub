@@ -1,0 +1,3 @@
+## Setting below is needed for CIS compliance
+GRUB_CMDLINE_LINUX_DEFAULT="audit=1 selinux=1 enforcing=1"
+## (End of CIS compliance settings)
