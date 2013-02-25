@@ -1,4 +1,4 @@
-puppetlabs-cis-linux
+cis-puppet
 ====================
 
-Center for Internet Security Linux Benchmark implementation for PuppetLabs
+Center for Internet Security Linux Benchmark implementation for Puppet.
