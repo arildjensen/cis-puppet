@@ -110,12 +110,12 @@ class cis-rhel6 {
   # CIS Control 1.5.5
   # CIS Control 3.1
   file {'/etc/sysconfig/init':
-  	template("cis-rhel6/etc/sysconfig/init")
+  	source  => "puppet:///modules/cis-puppet/cis-rhel6/etc/sysconfig/init",
   	}
 
   # CIS Control 1.6.1
   file {'/etc/security/limits.conf':
-  	template("cis-rhel6/etc/security/limits.conf")
+  	source  => "puppet:///modules/cis-puppet/cis-rhel6/etc/security/limits.conf",
   	}
 
   # CIS Control 1.6.1
@@ -132,7 +132,7 @@ class cis-rhel6 {
   # CIS Control 4.2.7
   # CIS Control 4.2.8
   file {'/etc/sysctl.conf':
-  	template("cis-rhel6/etc/sysctl.conf")
+  	source  => "puppet:///modules/cis-puppet/cis-rhel6/etc/sysctl.conf",
   	}
   	
   # CIS Control 2.1.1
@@ -245,24 +245,24 @@ class cis-rhel6 {
   	ensure => installed
   	}
   file {'/etc/ntp.conf':
-  	template("cis-rhel6/etc/ntp.conf"),
-  	owner => root,
-  	group => root,
-  	mode  => 0640
+  	source  => "puppet:///modules/cis-puppet/cis-rhel6/etc/ntp.conf",
+  	owner   => root,
+  	group   => root,
+  	mode    => 0640
   	}
   file {'/etc/sysconfig/ntpd':
-  	template("cis-rhel6/etc/sysconfig/ntpd"),
-  	owner => root,
-  	group => root,
-  	mode  => 0640
+  	source  => "puppet:///modules/cis-puppet/cis-rhel6/etc/sysconfig/ntpd",
+  	owner   => root,
+  	group   => root,
+  	mode    => 0640
   	}
 
   # CIS Control 3.16
   file {'/etc/postfix/main.cf':
-  	template("cis-rhel6/etc/postfix/main.cf"),
-  	owner => root,
-  	group => root,
-  	mode  => 0640
+  	source  => "puppet:///modules/cis-puppet/cis-rhel6/etc/postfix/main.cf",
+  	owner   => root,
+  	group   => root,
+  	mode    => 0640
   	}
 
   # CIS Control 4.5.3
