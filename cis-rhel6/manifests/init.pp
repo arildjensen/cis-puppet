@@ -356,10 +356,89 @@ class cis-rhel6 {
   # CIS Control 5.2.14
   # CIS Control 5.2.15
   # CIS Control 5.2.16
+  # CIS Control 5.2.17
+  # CIS Control 5.2.18
   file {'/etc/rsyslog.conf':
   	source  => "puppet:///modules/cis-puppet/cis-rhel6/etc/audit/audit.rules",
   	}
 
   # CIS Control 5.2.12 -- Not doable with Puppet
+
+  # CIS Control 6.1.1
+  package {'cronie-anacron':
+    ensure => installed,
+  }
+
+  # CIS Control 6.1.2
+  service {'cron':
+    enable => true,
+  }
+
+  # CIS Control 6.1.3
+  file {'/etc/anacrontab':
+    owner => root,
+    group => root,
+    mode  => 0600,
+  }
+
+  # CIS Control 6.1.4
+  file {'/etc/crontab':
+    owner => root,
+    group => root,
+    mode  => 0600,
+  }
+
+  # CIS Control 6.1.5
+  file {'/etc/cron.hourly':
+    owner => root,
+    group => root,
+    mode  => 0600,
+  }
+
+  # CIS Control 6.1.6
+  file {'/etc/cron.daily':
+    owner => root,
+    group => root,
+    mode  => 0600,
+  }
+
+  # CIS Control 6.1.7
+  file {'/etc/cron.weekly':
+    owner => root,
+    group => root,
+    mode  => 0600,
+  }
+
+  # CIS Control 6.1.8
+  file {'/etc/cron.monthly':
+    owner => root,
+    group => root,
+    mode  => 0600,
+  }
+
+# CIS Control 6.1.9
+  file {'/etc/cron.d':
+    owner => root,
+    group => root,
+    mode  => 0700,
+  }
+
+# CIS Control 6.1.10
+# CIS Control 6.1.11
+  file {'/etc/at.deny':
+    ensure  => absent;
+  }
+  file {'/etc/at.allow':
+    source  => "puppet:///modules/cis-puppet/cis-rhel6/etc/at.allow",
+    owner   => root,
+    group   => root,
+    mode    => 0600,
+  }
+  file {'/etc/cron.allow':
+    source  => "puppet:///modules/cis-puppet/cis-rhel6/etc/cron.allow",
+    owner   => root,
+    group   => root,
+    mode    => 0600,
+  }
 
 } # End class definition

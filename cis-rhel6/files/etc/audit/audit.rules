@@ -71,4 +71,14 @@
 #For 64 bit systems, add
 -a always,exit arch=b64 -S init_module -S delete_module -k modules
 
+-w /sbin/insmod -p x -k modules
+-w /sbin/rmmod -p x -k modules
+-w /sbin/modprobe -p x -k modules
+#For 32 bit systems, add
+-a always,exit arch=b32 -S init_module -S delete_module -k modules
+#For 64 bit systems, add
+-a always,exit arch=b64 -S init_module -S delete_module -k modules
+
+-e 2
+
 ## (End of CIS compliance settings)
