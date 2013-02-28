@@ -426,7 +426,7 @@ class cis-rhel6 {
 # CIS Control 6.1.10
 # CIS Control 6.1.11
   file {'/etc/at.deny':
-    ensure  => absent;
+    ensure  => absent,
   }
   file {'/etc/at.allow':
     source  => "puppet:///modules/cis-puppet/cis-rhel6/etc/at.allow",
@@ -441,4 +441,45 @@ class cis-rhel6 {
     mode    => 0600,
   }
 
+  # CIS Control 6.2.1
+  # CIS Control 6.2.2
+  # CIS Control 6.2.3
+  # CIS Control 6.2.4
+  # CIS Control 6.2.5
+  # CIS Control 6.2.6
+  # CIS Control 6.2.7
+  # CIS Control 6.2.8
+  # CIS Control 6.2.9
+  # CIS Control 6.2.10
+  # CIS Control 6.2.11
+  # CIS Control 6.2.12
+  # CIS Control 6.2.13, requires editing of sshd_config with
+  # environment-specific deny/allow list of users.
+  # CIS Control 6.2.14
+  file {'/etc/ssh/sshd_config':
+    source  => "puppet:///modules/cis-puppet/cis-rhel6/etc/ssh/sshd_config",
+    owner   => root,
+    group   => root,
+    mode    => 0600,
+  }
+
+  # CIS Control 6.3.1
+  file {'/etc/sysconfig/authconfig':
+    source  => "puppet:///modules/cis-puppet/cis-rhel6/etc/sysconfig/authconfig",
+    owner   => root,
+    group   => root,
+    mode    => 0644,
+  }
+
+  # CIS Control 6.3.2
+  file {'/etc/pam.d/system-auth':
+    ensure  => link,
+    target  => '/etc/pam.d/system-auth-ac',
+  }
+  file {'/etc/pam.d/system/auth-ac':
+    source  => "puppet:///modules/cis-puppet/cis-rhel6/etc/pam.d/system-auth-ac",
+    owner   => root,
+    group   => root,
+    mode    => 0644,
+  }
 } # End class definition

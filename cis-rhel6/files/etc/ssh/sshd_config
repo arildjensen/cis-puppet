@@ -1,0 +1,33 @@
+Protocol 2
+LogLevel INFO
+X11Forwarding no
+MaxAuthTries 4
+IgnoreRhosts yes
+HostbasedAuthentication no
+PermitRootLogin no
+PermitEmptyPasswords no
+PermitUserEnvironment no
+Ciphers aes128-ctr,aes192-ctr,aes256-ctr
+ClientAliveInterval 300
+ClientAliveCountMax 0
+
+# Use either allow or deny to restrict who can SSH into the system per CIS
+# Control 6.2.13. This needs to be done on a system-by-system basis.
+# AllowUsers  <userlist>
+# AllowGroups <grouplist>
+# DenyUsers   <userlist>
+# DenyGroups  <grouplist>
+
+Banner /etc/issue.net
+
+SyslogFacility AUTHPRIV
+PasswordAuthentication yes
+ChallengeResponseAuthentication no
+GSSAPIAuthentication yes
+GSSAPICleanupCredentials yes
+UsePAM yes
+AcceptEnv LANG LC_CTYPE LC_NUMERIC LC_TIME LC_COLLATE LC_MONETARY LC_MESSAGES
+AcceptEnv LC_PAPER LC_NAME LC_ADDRESS LC_TELEPHONE LC_MEASUREMENT
+AcceptEnv LC_IDENTIFICATION LC_ALL LANGUAGE
+AcceptEnv XMODIFIERS
+Subsystem	sftp	/usr/libexec/openssh/sftp-server
