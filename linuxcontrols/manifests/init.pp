@@ -346,3 +346,39 @@ class cis::linuxcontrols::c0035 {
   	mode    => 0640
   	}
 }
+
+class cis::linuxcontrols::c0036 {
+
+# CIS Control 4.5.3
+  file {'/etc/hosts.allow':
+  	owner => root,
+  	group => root,
+  	mode  => 0644
+  	}
+}
+
+class cis::linuxcontrols::c0037 {
+
+# CIS Control 4.5.5
+  file {'/etc/hosts.deny':
+  	owner => root,
+  	group => root,
+  	mode  => 0644
+  	}	
+}
+
+class cis::linuxcontrols::c0038 {
+
+# CIS Control 4.7
+  package {'iptables':
+  	ensure  => installed,
+    before  => Service['iptables'],
+  	}
+
+  service {'iptables':
+    ensure      => running,
+  	enabled     => true,
+    hasrestart  => true,
+    hasstatus   => true,
+  	}
+} 
