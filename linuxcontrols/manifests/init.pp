@@ -382,3 +382,121 @@ class cis::linuxcontrols::c0038 {
     hasstatus   => true,
   	}
 } 
+
+class cis::linuxcontrols::c0039 {
+
+# CIS Control 5.1.1
+  package {'rsyslog':
+  	ensure => installed
+  	}
+}
+
+class cis::linuxcontrols::c0040 {
+
+# CIS Control 5.1.2
+  service {'rsyslog':
+  	enable => true
+  	}
+}
+
+class cis::linuxcontrols::c0041 {
+
+# CIS Control 5.1.4
+  file {'/var/log/messages':
+  	owner => root,
+  	group => root,
+  	mode  => 0600
+  	}
+}
+
+class cis::linuxcontrols::c0042 {
+  file {'/var/log/secure':
+  	owner => root,
+  	group => root,
+  	mode  => 0600
+  	}
+}
+
+class cis::linuxcontrols::c0043 {
+  file {'/var/log/maillog':
+  	owner => root,
+  	group => root,
+  	mode  => 0600
+  	}
+}
+
+class cis::linuxcontrols::c0044 {
+  file {'/var/log/cron':
+  	owner => root,
+  	group => root,
+  	mode  => 0600
+  	}
+}
+
+class cis::linuxcontrols::c0045 {
+  file {'/var/log/spooler':
+  	owner => root,
+  	group => root,
+  	mode  => 0600
+  	}
+}
+
+class cis::linuxcontrols::c0046 {
+  file {'/var/log/boot.log':
+  	owner => root,
+  	group => root,
+  	mode  => 0600
+  	}
+}
+
+class cis::linuxcontrols::c0047 {
+
+# CIS Control 5.1.5
+  file {'/etc/rsyslog.conf':
+  	source  => "puppet:///modules/cis-puppet/cis-rhel6/etc/rsyslog.conf",
+    notify  => Service['rsyslog'],
+  	}
+}
+
+class cis::linuxcontrols::c0048 {
+
+# CIS Control 5.2.1.3
+  file {'/etc/audit/auditd.conf':
+  	source  => "puppet:///modules/cis-puppet/cis-rhel6/etc/audit/auditd.conf",
+    notify  => Service['auditd'],
+  	}
+}
+
+class cis::linuxcontrols::c0049 {
+
+# CIS Control 5.2.2
+  service {'auditd':
+  	enable => true
+  	}
+}
+
+class cis::linuxcontrols::c0050 {
+
+# CIS Control 5.2.4
+# CIS Control 5.2.5
+# CIS Control 5.2.6
+# CIS Control 5.2.7
+# CIS Control 5.2.8
+# CIS Control 5.2.9
+# CIS Control 5.2.10
+# CIS Control 5.2.11
+# CIS Control 5.2.13
+# CIS Control 5.2.14
+# CIS Control 5.2.15
+# CIS Control 5.2.16
+# CIS Control 5.2.17
+# CIS Control 5.2.18
+  file {'/etc/audit/audit.rules':
+  	source  => "puppet:///modules/cis-puppet/cis-rhel6/etc/audit/audit.rules",
+    notify  => Service['auditd'],
+  	}
+}
+
+# CIS Control 5.2.12 -- Not doable with Puppet
+
+}
