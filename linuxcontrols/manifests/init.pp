@@ -694,5 +694,13 @@ class cis::linuxcontrols::c0067 {
 class cis::linuxcontrols::c0068 {
 
 # CIS Control 6.5 TODO Get pam.d/su template
+
+  file {'/etc/pam.d/su':
+    source  => "puppet:///modules/cis-puppet/cis-rhel6/etc/pam.d/su",
+    owner   => root,
+    group   => root,
+    mode    => 0644,
+  }
+}
 }
 
