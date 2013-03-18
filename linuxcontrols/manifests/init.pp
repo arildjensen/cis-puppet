@@ -146,3 +146,203 @@ class cis::linuxcontrols::c0012 {
   	source  => "puppet:///modules/cis-puppet/cis-rhel6/etc/sysctl.conf",
   	}
 } 
+class cis::linuxcontrols::c0013 {
+
+# CIS Control 2.1.1
+  package {'telnet-server':
+  	ensure => absent
+  	}
+}
+
+class cis::linuxcontrols::c0014 {
+
+# CIS Control 2.1.2
+  package {'telnet':
+  	ensure => absent
+  	}
+}
+
+class cis::linuxcontrols::c0015 {
+
+# CIS Control 2.1.3
+  package {'rsh-server':
+  	ensure => absent
+  	}
+}
+
+class cis::linuxcontrols::c0016 {
+
+# CIS Control 2.1.4
+  package {'rsh':
+  	ensure => absent
+  	}
+}
+
+class cis::linuxcontrols::c0017 {
+
+# CIS Control 2.1.5
+  package {'ypbind':
+  	ensure => absent
+  	}
+}
+
+class cis::linuxcontrols::c0018 {
+
+# CIS Control 2.1.6
+  package {'ypserv':
+  	ensure => absent
+  	}
+}
+
+class cis::linuxcontrols::c0019 {
+
+# CIS Control 2.1.7
+  package {'tftp':
+  	ensure => absent
+  	}
+}
+
+class cis::linuxcontrols::c0020 {
+
+# CIS Control 2.1.8
+  package {'tftp-server':
+  	ensure => absent
+  	}
+}
+
+class cis::linuxcontrols::c0021 {
+
+# CIS Control 2.1.9
+  package {'talk':
+  	ensure => absent
+  	}
+}
+
+class cis::linuxcontrols::c0022 {
+
+# CIS Control 2.1.10
+  package {'talk-server':
+  	ensure => absent
+  	}
+}
+
+class cis::linuxcontrols::c0023 {
+
+# CIS Control 2.1.11
+  package {'xinetd':
+  	ensure => absent
+  	}
+}
+
+class cis::linuxcontrols::c0024 {
+
+# CIS Control 2.1.12
+  package {'chargen-dgram':
+  	ensure => absent
+  	}
+}
+
+class cis::linuxcontrols::c0025 {
+
+# CIS Control 2.1.13
+  package {'chargen-stream':
+  	ensure => absent
+  	}
+}
+
+class cis::linuxcontrols::c0026 {
+
+# CIS Control 2.1.14
+  package {'daytime-dgram':
+  	ensure => absent
+  	}
+}
+
+class cis::linuxcontrols::c0027 {
+
+# CIS Control 2.1.15
+  package {'daytime-stream':
+  	ensure => absent
+  	}
+}
+
+class cis::linuxcontrols::c0028 {
+
+# CIS Control 2.1.16
+  package {'echo-dgram':
+  	ensure => absent
+  	}
+}
+
+class cis::linuxcontrols::c0029 {
+
+# CIS Control 2.1.17
+  package {'echo-stream':
+  	ensure => absent
+  	}
+}
+
+class cis::linuxcontrols::c0030 {
+
+# CIS Control 2.1.18
+  package {'tcpmux-server':
+  	ensure => absent
+  	}
+}
+
+class cis::linuxcontrols::c0031 {
+
+# CIS Control 3.2
+  package {'xorg-x11-libs':
+  	ensure => absent
+  	}
+}
+
+class cis::linuxcontrols::c0032 {
+
+# CIS Control 3.3
+  package {'avahi-daemon':
+  	ensure => absent
+  	}
+}
+
+class cis::linuxcontrols::c0033 {
+
+# CIS Control 3.5
+  package {'dhcp':
+  	ensure => absent
+  	}
+}
+
+class cis::linuxcontrols::c0034 {
+
+# CIS Control 3.6
+  package {'ntp':
+  	ensure => installed
+  	}
+  file {'/etc/ntp.conf':
+  	source  => "puppet:///modules/cis-puppet/cis-rhel6/etc/ntp.conf",
+  	owner   => root,
+  	group   => root,
+  	mode    => 0640,
+    notify  => Package['ntp'],
+  	}
+  file {'/etc/sysconfig/ntpd':
+  	source  => "puppet:///modules/cis-puppet/cis-rhel6/etc/sysconfig/ntpd",
+  	owner   => root,
+  	group   => root,
+  	mode    => 0640
+    notify  => Package['ntp'],
+  	}
+}
+
+class cis::linuxcontrols::c0035 {
+
+# CIS Control 3.16
+  file {'/etc/postfix/main.cf':
+  	source  => "puppet:///modules/cis-puppet/cis-rhel6/etc/postfix/main.cf",
+  	owner   => root,
+  	group   => root,
+  	mode    => 0640
+  	}
+}
