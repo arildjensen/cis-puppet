@@ -503,7 +503,8 @@ class cis::linuxcontrols::c0051 {
 }
 
 class cis::linuxcontrols::c0052 {
-# CIS Control 5.2.12 -- Facter f0001 TODO
+# CIS Control 5.2.12 -- TODO Find a way to cron an update to audit.rules with
+# suid/guid entries.
 }
 
 class cis::linuxcontrols::c0053 {
@@ -762,7 +763,7 @@ class cis::linuxcontrols::c0074 {
     mode    => 0644,
   }
 
-
+class cis::linuxcontrols::c0075 {
 # CIS Control 7.5
   file {'/etc/default/useradd':
     source  => "puppet:///modules/cis-puppet/linuxcontrols/el6/etc/default/useradd",
@@ -770,4 +771,28 @@ class cis::linuxcontrols::c0074 {
     group   => root,
     mode    => 0600,
   }
+}
 
+class cis::linuxcontrols:c0076 {
+# CIS Control 8.1
+# CIS Control 8.2
+  file {'/etc/issue.net':
+    source  => "puppet:///modules/cis-puppet/cis-rhel6/etc/issue.net",
+    owner   => root,
+    group   => root,
+    mode    => 0644,
+  }
+  file {'/etc/issue':
+    source  => "puppet:///modules/cis-puppet/cis-rhel6/etc/issue.net",
+    owner   => root,
+    group   => root,
+    mode    => 0644,
+  }
+  file {'/etc/motd':
+    source  => "puppet:///modules/cis-puppet/cis-rhel6/etc/issue.net",
+    owner   => root,
+    group   => root,
+    mode    => 0644,
+  } 
+
+} # End class definition
