@@ -710,4 +710,64 @@ class cis::linuxcontrols::c0070 {
   }
 }
 
+class cis::linuxcontrols::c0071 {
+# CIS Control 7.1.1
+# CIS Control 7.1.2
+# CIS Control 7.1.3
+  file {'/etc/login.defs':
+    source  => "puppet:///modules/cis-puppet/linuxcontrols/etc/login.defs",
+    owner   => root,
+    group   => root,
+    mode    => 0644,
+  }
+
+class cis::linuxcontrols::c0072 {
+# CIS Control 7.2
+  package {'grep':
+    ensure  => present,
+  }
+  package {'gawk':
+    ensure  => present,
+  }
+  if $f0001 == 'fail' {
+    warning('Node $fqdn failed CIS Control 7.2 (f0001)')
+  }
+}
+
+class cis::linuxcontrols::c0073 {
+# CIS Control 7.3
+  accounts::user {'root':
+    uid => 0,
+    gid => 0,
+  }
+
+class cis::linuxcontrols::c0074 {
+# CIS Control 7.4
+  file {'/etc/profile':
+    source  => "puppet:///modules/cis-puppet/linuxcontrols/el6/etc/profile",
+    owner   => root,
+    group   => root,
+    mode    => 0644,
+  }
+  file {'/etc/bashrc':
+    source  => "puppet:///modules/cis-puppet/linuxcontrols/el6/etc/bashrc",
+    owner   => root,
+    group   => root,
+    mode    => 0644,
+  }
+  file {'/etc/csh.cshrc':
+    source  => "puppet:///modules/cis-puppet/linuxcontrols/el6/etc/csh.cshrc",
+    owner   => root,
+    group   => root,
+    mode    => 0644,
+  }
+
+
+# CIS Control 7.5
+  file {'/etc/default/useradd':
+    source  => "puppet:///modules/cis-puppet/linuxcontrols/el6/etc/default/useradd",
+    owner   => root,
+    group   => root,
+    mode    => 0600,
+  }
 
