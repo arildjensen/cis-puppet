@@ -795,4 +795,103 @@ class cis::linuxcontrols:c0076 {
     mode    => 0644,
   } 
 
-} # End class definition
+}
+
+class cis::linuxcontrols::c0077 {
+# CIS 9.1.2
+# CIS 9.1.6
+  file {'/etc/passwd':
+    owner   => root,
+    group   => root,
+    mode    => 0644,
+  }
+}
+
+class cis::linuxcontrols::c0078 {
+# CIS 9.1.3
+# CIS 9.1.7
+  file {'/etc/shadow':
+    owner   => root,
+    group   => root,
+    mode    => 0000,
+  }
+}
+
+class cis::linuxcontrols::c0079 {
+# CIS 9.1.4
+# CIS 9.1.8
+  file {'/etc/gshadow':
+    owner   => root,
+    group   => root,
+    mode    => 0000,
+  }
+}
+
+class cis::linuxcontrols::c0080 {
+# CIS 9.1.5
+# CIS 9.1.9
+  file {'/etc/group':
+    owner   => root,
+    group   => root,
+    mode    => 0644,
+  }
+}
+
+class cis::linuxcontrols::c0081 {
+# CIS 9.1.11 
+# Push a script that looks for unowned files out, add to nightly crontab, add
+# a fact that reads the associated log file.
+  package {'gawk':
+    ensure  => present,
+  }
+  package {'coreutils':
+    ensure  => present,
+  }
+  package {'findutils':
+    ensure  => present:
+  }
+  file {'/usr/local/sbin/unowned_files.sh':
+   source => "puppet:///modules/cis-puppet/linuxcontrols/scripts/unowned_files.sh",
+   owner  => root,
+   group  => root,
+   mode   => 0700,
+  }
+  cron {'unowned_files.sh':
+    command => '/usr/local/sbin/unowned_files.sh',
+    user    => 'root',
+    hour    => 4,
+    minute  => 44,
+  }
+  if $f0002 == 'fail' {
+    warning('Node $fqdn failed CIS Control 9.1.11 (f0002)')
+  }
+}
+
+class cis::linuxcontrols::c0082 {
+# CIS 9.1.12 
+# Same as c0081, except look for files belonging to non-existing groups
+    package {'gawk':
+      ensure  => present,
+    }
+    package {'coreutils':
+      ensure  => present,
+    }
+    package {'findutils':
+      ensure  => present:
+    }
+    file {'/usr/local/sbin/ungrouped_files.sh':
+      source => "puppet:///modules/cis-puppet/linuxcontrols/scripts/ungrouped_files.sh",
+      owner  => root,
+      group  => root,
+      mode   => 0700,
+    }
+    cron {'ungrouped_files.sh':
+      command => '/usr/local/sbin/ungrouped_files.sh',
+      user    => 'root',
+      hour    => 3,
+      minute  => 33,
+    }
+    if $f0003 == 'fail' {
+      warning('Node $fqdn failed CIS Control 9.1.12 (f0003)')
+  }
+} 
