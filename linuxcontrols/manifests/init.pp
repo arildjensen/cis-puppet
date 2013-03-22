@@ -95,9 +95,14 @@ class cis::linuxcontrols::c0008 {
   	}
 }
 
-# CIS Control 1.4.6 -- Not configurable via puppet.
-
 class cis::linuxcontrols::c0009 {
+# CIS Control 1.4.6
+# Facter f0000
+  if $f0000 == 'fail' {
+    warning('Node $fqdn failed CIS Control 1.4.6 (f0000)')
+  }
+
+class cis::linuxcontrols::c0010 {
 
 # CIS Control 1.5.1
   file {'/etc/grub.conf':
@@ -109,7 +114,7 @@ class cis::linuxcontrols::c0009 {
 
 # CIS Control 1.5.3 -- Not configurable via puppet
 
-class cis::linuxcontrols::c0010 {
+class cis::linuxcontrols::c0011 {
 
 # CIS Control 1.5.4
 # CIS Control 1.5.5
@@ -119,7 +124,7 @@ class cis::linuxcontrols::c0010 {
   	}
 }
 
-class cis::linuxcontrols::c0011 {
+class cis::linuxcontrols::c0012 {
 
 # CIS Control 1.6.1
   file {'/etc/security/limits.conf':
@@ -127,7 +132,7 @@ class cis::linuxcontrols::c0011 {
   	}
 }
 
-class cis::linuxcontrols::c0012 {
+class cis::linuxcontrols::c0013 {
 
 # CIS Control 1.6.1
 # CIS Control 1.6.2
@@ -146,7 +151,7 @@ class cis::linuxcontrols::c0012 {
   	source  => "puppet:///modules/cis-puppet/cis-rhel6/etc/sysctl.conf",
   	}
 } 
-class cis::linuxcontrols::c0013 {
+class cis::linuxcontrols::c0014 {
 
 # CIS Control 2.1.1
   package {'telnet-server':
@@ -154,7 +159,7 @@ class cis::linuxcontrols::c0013 {
   	}
 }
 
-class cis::linuxcontrols::c0014 {
+class cis::linuxcontrols::c0015 {
 
 # CIS Control 2.1.2
   package {'telnet':
@@ -162,7 +167,7 @@ class cis::linuxcontrols::c0014 {
   	}
 }
 
-class cis::linuxcontrols::c0015 {
+class cis::linuxcontrols::c0016 {
 
 # CIS Control 2.1.3
   package {'rsh-server':
@@ -170,7 +175,7 @@ class cis::linuxcontrols::c0015 {
   	}
 }
 
-class cis::linuxcontrols::c0016 {
+class cis::linuxcontrols::c0017 {
 
 # CIS Control 2.1.4
   package {'rsh':
@@ -178,7 +183,7 @@ class cis::linuxcontrols::c0016 {
   	}
 }
 
-class cis::linuxcontrols::c0017 {
+class cis::linuxcontrols::c0018 {
 
 # CIS Control 2.1.5
   package {'ypbind':
@@ -186,7 +191,7 @@ class cis::linuxcontrols::c0017 {
   	}
 }
 
-class cis::linuxcontrols::c0018 {
+class cis::linuxcontrols::c0019 {
 
 # CIS Control 2.1.6
   package {'ypserv':
@@ -194,7 +199,7 @@ class cis::linuxcontrols::c0018 {
   	}
 }
 
-class cis::linuxcontrols::c0019 {
+class cis::linuxcontrols::c0020 {
 
 # CIS Control 2.1.7
   package {'tftp':
@@ -202,7 +207,7 @@ class cis::linuxcontrols::c0019 {
   	}
 }
 
-class cis::linuxcontrols::c0020 {
+class cis::linuxcontrols::c0021 {
 
 # CIS Control 2.1.8
   package {'tftp-server':
@@ -210,7 +215,7 @@ class cis::linuxcontrols::c0020 {
   	}
 }
 
-class cis::linuxcontrols::c0021 {
+class cis::linuxcontrols::c0022 {
 
 # CIS Control 2.1.9
   package {'talk':
@@ -218,7 +223,7 @@ class cis::linuxcontrols::c0021 {
   	}
 }
 
-class cis::linuxcontrols::c0022 {
+class cis::linuxcontrols::c0023 {
 
 # CIS Control 2.1.10
   package {'talk-server':
@@ -226,7 +231,7 @@ class cis::linuxcontrols::c0022 {
   	}
 }
 
-class cis::linuxcontrols::c0023 {
+class cis::linuxcontrols::c0024 {
 
 # CIS Control 2.1.11
   package {'xinetd':
@@ -234,7 +239,7 @@ class cis::linuxcontrols::c0023 {
   	}
 }
 
-class cis::linuxcontrols::c0024 {
+class cis::linuxcontrols::c0025 {
 
 # CIS Control 2.1.12
   package {'chargen-dgram':
@@ -242,7 +247,7 @@ class cis::linuxcontrols::c0024 {
   	}
 }
 
-class cis::linuxcontrols::c0025 {
+class cis::linuxcontrols::c0026 {
 
 # CIS Control 2.1.13
   package {'chargen-stream':
@@ -250,7 +255,7 @@ class cis::linuxcontrols::c0025 {
   	}
 }
 
-class cis::linuxcontrols::c0026 {
+class cis::linuxcontrols::c0027 {
 
 # CIS Control 2.1.14
   package {'daytime-dgram':
@@ -258,7 +263,7 @@ class cis::linuxcontrols::c0026 {
   	}
 }
 
-class cis::linuxcontrols::c0027 {
+class cis::linuxcontrols::c0028 {
 
 # CIS Control 2.1.15
   package {'daytime-stream':
@@ -266,7 +271,7 @@ class cis::linuxcontrols::c0027 {
   	}
 }
 
-class cis::linuxcontrols::c0028 {
+class cis::linuxcontrols::c0029 {
 
 # CIS Control 2.1.16
   package {'echo-dgram':
@@ -274,7 +279,7 @@ class cis::linuxcontrols::c0028 {
   	}
 }
 
-class cis::linuxcontrols::c0029 {
+class cis::linuxcontrols::c0030 {
 
 # CIS Control 2.1.17
   package {'echo-stream':
@@ -282,7 +287,7 @@ class cis::linuxcontrols::c0029 {
   	}
 }
 
-class cis::linuxcontrols::c0030 {
+class cis::linuxcontrols::c0031 {
 
 # CIS Control 2.1.18
   package {'tcpmux-server':
@@ -290,7 +295,7 @@ class cis::linuxcontrols::c0030 {
   	}
 }
 
-class cis::linuxcontrols::c0031 {
+class cis::linuxcontrols::c0032 {
 
 # CIS Control 3.2
   package {'xorg-x11-libs':
@@ -298,7 +303,7 @@ class cis::linuxcontrols::c0031 {
   	}
 }
 
-class cis::linuxcontrols::c0032 {
+class cis::linuxcontrols::c0033 {
 
 # CIS Control 3.3
   package {'avahi-daemon':
@@ -306,7 +311,7 @@ class cis::linuxcontrols::c0032 {
   	}
 }
 
-class cis::linuxcontrols::c0033 {
+class cis::linuxcontrols::c0034 {
 
 # CIS Control 3.5
   package {'dhcp':
@@ -314,7 +319,7 @@ class cis::linuxcontrols::c0033 {
   	}
 }
 
-class cis::linuxcontrols::c0034 {
+class cis::linuxcontrols::c0035 {
 
 # CIS Control 3.6
   package {'ntp':
@@ -336,7 +341,7 @@ class cis::linuxcontrols::c0034 {
   	}
 }
 
-class cis::linuxcontrols::c0035 {
+class cis::linuxcontrols::c0036 {
 
 # CIS Control 3.16
   file {'/etc/postfix/main.cf':
@@ -347,7 +352,7 @@ class cis::linuxcontrols::c0035 {
   	}
 }
 
-class cis::linuxcontrols::c0036 {
+class cis::linuxcontrols::c0037 {
 
 # CIS Control 4.5.3
   file {'/etc/hosts.allow':
@@ -357,7 +362,7 @@ class cis::linuxcontrols::c0036 {
   	}
 }
 
-class cis::linuxcontrols::c0037 {
+class cis::linuxcontrols::c0038 {
 
 # CIS Control 4.5.5
   file {'/etc/hosts.deny':
@@ -367,7 +372,7 @@ class cis::linuxcontrols::c0037 {
   	}	
 }
 
-class cis::linuxcontrols::c0038 {
+class cis::linuxcontrols::c0039 {
 
 # CIS Control 4.7
   package {'iptables':
@@ -383,7 +388,7 @@ class cis::linuxcontrols::c0038 {
   	}
 } 
 
-class cis::linuxcontrols::c0039 {
+class cis::linuxcontrols::c0040 {
 
 # CIS Control 5.1.1
   package {'rsyslog':
@@ -391,7 +396,7 @@ class cis::linuxcontrols::c0039 {
   	}
 }
 
-class cis::linuxcontrols::c0040 {
+class cis::linuxcontrols::c0041 {
 
 # CIS Control 5.1.2
   service {'rsyslog':
@@ -399,7 +404,7 @@ class cis::linuxcontrols::c0040 {
   	}
 }
 
-class cis::linuxcontrols::c0041 {
+class cis::linuxcontrols::c0042 {
 
 # CIS Control 5.1.4
   file {'/var/log/messages':
@@ -409,7 +414,7 @@ class cis::linuxcontrols::c0041 {
   	}
 }
 
-class cis::linuxcontrols::c0042 {
+class cis::linuxcontrols::c0043 {
   file {'/var/log/secure':
   	owner => root,
   	group => root,
@@ -417,7 +422,7 @@ class cis::linuxcontrols::c0042 {
   	}
 }
 
-class cis::linuxcontrols::c0043 {
+class cis::linuxcontrols::c0044 {
   file {'/var/log/maillog':
   	owner => root,
   	group => root,
@@ -425,7 +430,7 @@ class cis::linuxcontrols::c0043 {
   	}
 }
 
-class cis::linuxcontrols::c0044 {
+class cis::linuxcontrols::c0045 {
   file {'/var/log/cron':
   	owner => root,
   	group => root,
@@ -433,7 +438,7 @@ class cis::linuxcontrols::c0044 {
   	}
 }
 
-class cis::linuxcontrols::c0045 {
+class cis::linuxcontrols::c0046 {
   file {'/var/log/spooler':
   	owner => root,
   	group => root,
@@ -441,7 +446,7 @@ class cis::linuxcontrols::c0045 {
   	}
 }
 
-class cis::linuxcontrols::c0046 {
+class cis::linuxcontrols::c0047 {
   file {'/var/log/boot.log':
   	owner => root,
   	group => root,
@@ -449,7 +454,7 @@ class cis::linuxcontrols::c0046 {
   	}
 }
 
-class cis::linuxcontrols::c0047 {
+class cis::linuxcontrols::c0048 {
 
 # CIS Control 5.1.5
   file {'/etc/rsyslog.conf':
@@ -458,7 +463,7 @@ class cis::linuxcontrols::c0047 {
   	}
 }
 
-class cis::linuxcontrols::c0048 {
+class cis::linuxcontrols::c0049 {
 
 # CIS Control 5.2.1.3
   file {'/etc/audit/auditd.conf':
@@ -467,7 +472,7 @@ class cis::linuxcontrols::c0048 {
   	}
 }
 
-class cis::linuxcontrols::c0049 {
+class cis::linuxcontrols::c0050 {
 
 # CIS Control 5.2.2
   service {'auditd':
@@ -475,7 +480,7 @@ class cis::linuxcontrols::c0049 {
   	}
 }
 
-class cis::linuxcontrols::c0050 {
+class cis::linuxcontrols::c0051 {
 
 # CIS Control 5.2.4
 # CIS Control 5.2.5
@@ -497,9 +502,11 @@ class cis::linuxcontrols::c0050 {
   	}
 }
 
-# CIS Control 5.2.12 -- Not doable with Puppet
+class cis::linuxcontrols::c0052 {
+# CIS Control 5.2.12 -- Facter f0001 TODO
+}
 
-class cis::linuxcontrols::c0051 {
+class cis::linuxcontrols::c0053 {
 
 # CIS Control 6.1.1
   package {'cronie-anacron':
@@ -507,7 +514,7 @@ class cis::linuxcontrols::c0051 {
   }
 }
 
-class cis::linuxcontrols::c0052 {
+class cis::linuxcontrols::c0054 {
 
 # CIS Control 6.1.2
   service {'cron':
@@ -519,7 +526,7 @@ class cis::linuxcontrols::c0052 {
   }
 }
 
-class cis::linuxcontrols::c0053 {
+class cis::linuxcontrols::c0055 {
 
 # CIS Control 6.1.3
   file {'/etc/anacrontab':
@@ -529,7 +536,7 @@ class cis::linuxcontrols::c0053 {
   }
 }
 
-class cis::linuxcontrols::c0054 {
+class cis::linuxcontrols::c0056 {
 
 # CIS Control 6.1.4
   file {'/etc/crontab':
@@ -539,7 +546,7 @@ class cis::linuxcontrols::c0054 {
   }
 }
 
-class cis::linuxcontrols::c0055 {
+class cis::linuxcontrols::c0057 {
 
 # CIS Control 6.1.5
   file {'/etc/cron.hourly':
@@ -549,7 +556,7 @@ class cis::linuxcontrols::c0055 {
   }
 }
 
-class cis::linuxcontrols::c0056 {
+class cis::linuxcontrols::c0058 {
 
 # CIS Control 6.1.6
   file {'/etc/cron.daily':
@@ -559,7 +566,7 @@ class cis::linuxcontrols::c0056 {
   }
 }
 
-class cis::linuxcontrols::c0057 {
+class cis::linuxcontrols::c0059 {
 
 # CIS Control 6.1.7
   file {'/etc/cron.weekly':
@@ -569,7 +576,7 @@ class cis::linuxcontrols::c0057 {
   }
 }
 
-class cis::linuxcontrols::c0058 {
+class cis::linuxcontrols::c0060 {
 
 # CIS Control 6.1.8
   file {'/etc/cron.monthly':
@@ -579,7 +586,7 @@ class cis::linuxcontrols::c0058 {
   }
 }
 
-class cis::linuxcontrols::c0059 {
+class cis::linuxcontrols::c0061 {
 
 # CIS Control 6.1.9
   file {'/etc/cron.d':
@@ -589,7 +596,7 @@ class cis::linuxcontrols::c0059 {
   }
 }
 
-class cis::linuxcontrols::c0060 {
+class cis::linuxcontrols::c0062 {
 
 # CIS Control 6.1.10
 # CIS Control 6.1.11
@@ -598,7 +605,7 @@ class cis::linuxcontrols::c0060 {
   }
 }
 
-class cis::linuxcontrols::c0061 {
+class cis::linuxcontrols::c0063 {
   file {'/etc/at.allow':
     source  => "puppet:///modules/cis-puppet/cis-rhel6/etc/at.allow",
     owner   => root,
@@ -607,7 +614,7 @@ class cis::linuxcontrols::c0061 {
   }
 }
 
-class cis::linuxcontrols::c0062 {
+class cis::linuxcontrols::c0064 {
   file {'/etc/cron.allow':
     source  => "puppet:///modules/cis-puppet/cis-rhel6/etc/cron.allow",
     owner   => root,
@@ -616,7 +623,7 @@ class cis::linuxcontrols::c0062 {
   }
 }
 
-class cis::linuxcontrols::c0063 {
+class cis::linuxcontrols::c0065 {
 
 # CIS Control 6.2.1
 # CIS Control 6.2.2
@@ -640,7 +647,7 @@ class cis::linuxcontrols::c0063 {
   }
 }
 
-class cis::linuxcontrols::c0064 {
+class cis::linuxcontrols::c0066 {
 
   file { '/etc/ssh/sshd_config':
     ensure  => present,
@@ -651,7 +658,7 @@ class cis::linuxcontrols::c0064 {
   }
 }
 
-class cis::linuxcontrols::c0065 {
+class cis::linuxcontrols::c0067 {
 
   service { 'sshd':
     ensure      => running,
@@ -663,7 +670,7 @@ class cis::linuxcontrols::c0065 {
   }
 }
 
-class cis::linuxcontrols::c0066 {
+class cis::linuxcontrols::c0068 {
 
 # CIS Control 6.3.1
   file {'/etc/sysconfig/authconfig':
@@ -674,7 +681,7 @@ class cis::linuxcontrols::c0066 {
   }
 }
 
-class cis::linuxcontrols::c0067 {
+class cis::linuxcontrols::c0069 {
 
 # CIS Control 6.3.2
 # CIS Control 6.3.3
@@ -691,9 +698,9 @@ class cis::linuxcontrols::c0067 {
   }
 }
 
-class cis::linuxcontrols::c0068 {
+class cis::linuxcontrols::c0070 {
 
-# CIS Control 6.5 TODO Get pam.d/su template
+# CIS Control 6.5
 
   file {'/etc/pam.d/su':
     source  => "puppet:///modules/cis-puppet/cis-rhel6/etc/pam.d/su",
@@ -702,5 +709,5 @@ class cis::linuxcontrols::c0068 {
     mode    => 0644,
   }
 }
-}
+
 
