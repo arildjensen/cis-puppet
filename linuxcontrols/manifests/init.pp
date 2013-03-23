@@ -895,3 +895,72 @@ class cis::linuxcontrols::c0082 {
       warning('Node $fqdn failed CIS Control 9.1.12 (f0003)')
   }
 } 
+
+class cis::linuxcontrols::c0083 {
+# CIS 9.2.1
+  if $f0004 == 'fail' {
+    warning('Node $fqdn failed CIS Control 9.2.1 (f0004)')
+  }
+}
+
+class cis::linuxcontrols::c0084 {
+# CIS 9.2.2
+  if $f0005 == 'fail' {
+    warning('Node $fqdn failed CIS Control 9.2.2 (f0005)')
+  }
+}
+
+class cis::linuxcontrols::c0085 {
+# CIS 9.2.3
+  if $f0006 == 'fail' {
+    warning('Node $fqdn failed CIS Control 9.2.3 (f0006)')
+  }
+}
+
+class cis::linuxcontrols::c0086 {
+# CIS 9.2.4
+  if $f0007 == 'fail' {
+    warning('Node $fqdn failed CIS Control 9.2.4 (f0007)')
+  }
+}
+
+class cis::linuxcontrols::c0087 {
+# CIS 9.2.5
+  if $f0008 == 'fail' {
+    warning('Node $fqdn failed CIS Control 9.2.5 (f0008)')
+  }
+}
+
+class cis::linuxcontrols::c0088 {
+# CIS 9.2.6
+  file {'/root/.bash_logout':
+    source  => "puppet:///modules/cis-puppet/el6/root/bash_logout",
+    owner   => root,
+    group   => root,
+    mode    => 0600,
+  }
+  file {'/root/.bash_profile':
+    source  => "puppet:///modules/cis-puppet/el6/root/bash_profile",
+    owner   => root,
+    group   => root,
+    mode    => 0600,
+  }
+  file {'/root/.bashrc':
+    source  => "puppet:///modules/cis-puppet/el6/root/bashrc",
+    owner   => root,
+    group   => root,
+    mode    => 0600,
+  }
+  file {'/root/.cshrc':
+    source  => "puppet:///modules/cis-puppet/el6/root/cshrc",
+    owner   => root,
+    group   => root,
+    mode    => 0600,
+  }
+  file {'/root/.tcshrc':
+    source  => "puppet:///modules/cis-puppet/el6/root/tcshrc",
+    owner   => root,
+    group   => root,
+    mode    => 0600,
+  }
+}
