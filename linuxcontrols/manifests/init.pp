@@ -975,13 +975,62 @@ class cis::linuxcontrols::0089 {
 class cis::linuxcontrols::c0090 {
 # CIS 9.2.8
   if $f0010 == 'fail' {
-    warning ('Node $fqdn failed CIS Control 9.2.8 (f0010)')
+    warning('Node $fqdn failed CIS Control 9.2.8 (f0010)')
   }
 }
 
 class cis::linuxcontrols::c0091 {
 # CIS 9.2.9
   if $f0011 == 'fail' {
-    warning ('Node $fqdn failed CIS Control 9.2.9 (f0011)')
+    warning('Node $fqdn failed CIS Control 9.2.9 (f0011)')
+  }
+}
+
+class cis::linuxcontrols::c0092 {
+# CIS 9.2.10
+  if $f0012 == 'fail' {
+    warning('Node $fqdn failed CIS Control 9.2.10 (f0012)')
+  }
+}
+
+class cis::linuxcontrols::c0093 {
+# CIS 9.2.11
+  if $f0013 == 'fail' {
+    warning('Node $fqdn failed CIS Control 9.2.11 (f0013)')
+  }
+}
+
+class cis::linuxcontrols::c0094 {
+# CIS 9.2.12
+  if $f0014 == 'fail' {
+    warning('Node $fqdn failed CIS Control 9.2.12 (f0014)')
+  }
+}
+
+class cis::linuxcontrols::c0095 {
+# CIS 9.2.13
+  if $f0015 == 'fail' {
+    warning('Node $fqdn failed CIS Control 9.2.13 (f0015)')
+  }
+}
+
+class cis::linuxcontrols::c0096 {
+# CIS 9.2.14
+  if $f0016 == 'fail' {
+    warning('Node $fqdn failed CIS Control 9.2.14 (f0016)')
+  }
+}
+
+class cis::linuxcontrols::c0097 {
+# CIS 9.2.15
+  if $f0017 == 'fail' {
+    warning('Node $fqdn failed CIS Control 9.2.15 (f0017)')
+  }
+}
+
+class cis::linuxcontrols::c0098 {
+# CIS 9.2.16
+  if $f0018 == 'fail' {
+    warning('Node $fqdn failed CIS Control 9.2.16 (f0018)')
   }
 }
