@@ -964,3 +964,24 @@ class cis::linuxcontrols::c0088 {
     mode    => 0600,
   }
 }
+
+class cis::linuxcontrols::0089 {
+# CIS 9.2.7
+  if $f0009 == 'fail' {
+    warning('Node $fqdn failed CIS Control 9.2.7 (f0009)')
+  }
+}
+
+class cis::linuxcontrols::c0090 {
+# CIS 9.2.8
+  if $f0010 == 'fail' {
+    warning ('Node $fqdn failed CIS Control 9.2.8 (f0010)')
+  }
+}
+
+class cis::linuxcontrols::c0091 {
+# CIS 9.2.9
+  if $f0011 == 'fail' {
+    warning ('Node $fqdn failed CIS Control 9.2.9 (f0011)')
+  }
+}
