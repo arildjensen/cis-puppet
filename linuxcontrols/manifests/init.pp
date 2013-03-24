@@ -968,21 +968,21 @@ class cis::linuxcontrols::c0101 {
   }
 }
 
-class cis::linuxcontrols::c0101 {
+class cis::linuxcontrols::c0102 {
 # CIS RHEL6 9.2.19
   if $f0020 == 'fail' {
     warning('Node $fqdn failed CIS RHEL6 Control 9.2.19 (f0020)')
   }
 }
 
-class cis::linuxcontrols::c0102 {
+class cis::linuxcontrols::c0103 {
 # CIS RHEL6 9.2.20
   if $f0021 == 'fail' {
     warning('Node $fqdn failed CIS RHEL6 Control 9.2.20 (f0021)')
   }
 }
 
-class cis::linuxcontrols::c0103 {
+class cis::linuxcontrols::c0104 {
 # CIS RHEL6 9.2.21
   if $f0022 == 'fail' {
     warning('Node $fqdn failed CIS RHEL6 Control 9.2.21 (f0022)')
