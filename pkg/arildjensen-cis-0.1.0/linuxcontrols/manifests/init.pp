@@ -13,46 +13,24 @@ class cis::linuxcontrols::c0000 {
 # CIS RHEL6 Control 1.1.15
 # CIS RHEL6 Control 1.1.16
   file {'/etc/fstab':
-#  	source  => "puppet:///modules/cis-puppet/linuxcontrols/el6/etc/fstab",
+  	source  => "puppet:///modules/cis-puppet/linuxcontrols/el6/etc/fstab",
   	owner   => root,
   	group   => root,
-  	mode    => 0600,
+  	mode    => 0600
   	}
-  mount {'/tmp':
-    options => 'nodev,nosuid,noexec',
-  }
-  mount {'/var':
-    options => 'nodev',
-  }
-  mount {'/var/log':
-    options => 'nodev',
-  }
-  mount {'/var/log/audit':
-    options => 'nodev',
-  }
-  mount {'/home':
-    options => 'nodev',
-  }
-  mount {'/opt':
-    options => 'nodev',
-  }
-  mount {'/dev/shm':
-    options => 'nodev,nosuid,noexec',
-  }
 }
 
 class cis::linuxcontrols::c0001 {
 # CIS RHEL6 Control 1.1.17
   file {'/tmp':
-  	mode    => 1777,
-    enѕure  => directory,
+  	mode => 1777
   	}
 }
 
 class cis::linuxcontrols::c0002 {
 # CIS RHEL6 Control 1.2.2
   package {'gpg-pubkey':
-  	ensure  => installed,
+  	ensure => installed
   	}
 }
 
@@ -60,9 +38,6 @@ class cis::linuxcontrols::c0003 {
 # CIS RHEL6 Control 1.2.3
   file {'/etc/yum.conf':
   	source  => "puppet:///modules/cis-puppet/linuxcontrols/el6/etc/yum.conf",
-    user    => root,
-    group   => root,
-    mode    => 0640,
   	}
 }
 
@@ -87,7 +62,6 @@ class cis::linuxcontrols::c0005 {
 class cis::linuxcontrols::c0006 {
 # CIS RHEL6 Control 1.4.1
 # CIS RHEL6 Control 5.2.3
-# TODO grub2 is not included in el6
   file{'/etc/default/grub':
   	source  => "puppet:///modules/cis-security/linuxcontrols/el6/etc/default/grub",
   	}
@@ -98,9 +72,6 @@ class cis::linuxcontrols::c0007 {
 # CIS RHEL6 Control 1.4.3
   file {'/etc/selinux/config':
   	source  => "puppet:///modules/cis-puppet/linuxcontrols/el6/etc/selinux/config",
-    user    => root,
-    group   => root,
-    mode    => 0640,
   	}
 }
 
@@ -144,9 +115,6 @@ class cis::linuxcontrols::c0013 {
 # CIS RHEL6 Control 3.1
   file {'/etc/sysconfig/init':
   	source  => "puppet:///modules/cis-puppet/linuxcontrols/el6/etc/sysconfig/init",
-    user    => root,
-    group   => root,
-    mode    => 0640,
   	}
 }
 
@@ -154,9 +122,6 @@ class cis::linuxcontrols::c0014 {
 # CIS RHEL6 Control 1.6.1
   file {'/etc/security/limits.conf':
   	source  => "puppet:///modules/cis-puppet/linuxcontrols/el6/etc/security/limits.conf",
-    user    => root,
-    group   => root,
-    mode    => 0640,
   	}
 }
 
@@ -176,9 +141,6 @@ class cis::linuxcontrols::c0015 {
 # CIS RHEL6 Control 4.2.8
   file {'/etc/sysctl.conf':
   	source  => "puppet:///modules/cis-puppet/linuxcontrols/el6/etc/sysctl.conf",
-    user    => root,
-    group   => root,
-    mode    => 0640,
   	}
 } 
 
@@ -460,9 +422,6 @@ class cis::linuxcontrols::c0050 {
 # CIS RHEL6 Control 5.1.5
   file {'/etc/rsyslog.conf':
   	source  => "puppet:///modules/cis-puppet/linuxcontrols/el6/etc/rsyslog.conf",
-    owner   => root,
-    group   => root,
-    mode    => 0640,
     notify  => Service['rsyslog'],
   	}
 }
@@ -471,9 +430,6 @@ class cis::linuxcontrols::c0051 {
 # CIS RHEL6 Control 5.2.1.3
   file {'/etc/audit/auditd.conf':
   	source  => "puppet:///modules/cis-puppet/linuxcontrols/el6/etc/audit/auditd.conf",
-    owner   => root,
-    group   => root,
-    mode    => 0640,
     notify  => Service['auditd'],
   	}
 }
@@ -507,9 +463,6 @@ class cis::linuxcontrols::c0053 {
     else {
       source  => "puppet:///modules/cis-puppet/linuxcontrols/el6/etc/audit/audit.rules.32",
     }
-    user    => root,
-    group   => root,
-    mode    => 0640,
     notify  => Service['auditd'],
   	}
 }

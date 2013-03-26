@@ -1,0 +1,38 @@
+Protocol 2
+LogLevel INFO
+X11Forwarding no
+MaxAuthTries 4
+IgnoreRhosts yes
+HostbasedAuthentication no
+PermitRootLogin no
+PermitEmptyPasswords no
+PermitUserEnvironment no
+Ciphers aes128-ctr,aes192-ctr,aes256-ctr
+ClientAliveInterval 300
+ClientAliveCountMax 0
+
+# Use either allow or deny to restrict who can SSH into the system per CIS
+# Control 6.2.13. This may need to be done on a system-by-system basis, using
+# user@system format allowing you one global sshd_config file (like sudoers).
+# AllowUsers  <userlist>
+# AllowGroups <grouplist>
+# DenyUsers   <userlist>
+# DenyGroups  <grouplist>
+# Below all system accounts included with a full install have been placed on
+# the deny list (as system accounts should never perform remote interactive logins.
+
+DenyUsers root,bin,daemon,adm,lp,mail,uucp,operator,games,gopher,ftp,nobody,dbus,rpc,usbmuxd,avahi-autiipd,hsqldb,abrt,pegasus,cimsrvr,oprofile,vcsa,rtkit,apache,saslauth,rpcuser,nfsnobody,qpidd,postfix,haldaemon,ricci,ntp,qemu,memcached,radvd,avahi,pulse,gdm,tomcat,webalizer,piranha,sshd,luci,dovecot,dovenull,tcpdump
+
+Banner /etc/issue.net
+
+SyslogFacility AUTHPRIV
+PasswordAuthentication yes
+ChallengeResponseAuthentication no
+GSSAPIAuthentication yes
+GSSAPICleanupCredentials yes
+UsePAM yes
+AcceptEnv LANG LC_CTYPE LC_NUMERIC LC_TIME LC_COLLATE LC_MONETARY LC_MESSAGES
+AcceptEnv LC_PAPER LC_NAME LC_ADDRESS LC_TELEPHONE LC_MEASUREMENT
+AcceptEnv LC_IDENTIFICATION LC_ALL LANGUAGE
+AcceptEnv XMODIFIERS
+Subsystem	sftp	/usr/libexec/openssh/sftp-server

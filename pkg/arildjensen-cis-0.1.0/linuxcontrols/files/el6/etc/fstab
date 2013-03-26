@@ -1,0 +1,15 @@
+/dev/VolGroup00/LogVol00 /              ext3    defaults            1 1
+/dev/VolGroup00/LogVol01 swap           swap    defaults            0 0
+/dev/VolGroup00/LogVol02 /tmp           ext3    nodev,nosuid,noexec 1 2
+/tmp                     /var/tmp       none    none                0 0
+/dev/VolGroup00/LogVol03 /var           ext3    nodev               1 2
+/dev/VolGroup00/LogVol04 /var/log       ext3    nodev               1 2
+/dev/VolGroup00/LogVol05 /var/log/audit ext3    nodev               1 2
+/dev/VolGroup00/LogVol06 /home          ext3    nodev               1 2
+/dev/VolGroup00/LogVol07 /opt           ext3    nodev               1 2
+LABEL=/boot              /boot          ext3    defaults            1 2
+tmpfs                    /dev/shm       tmpfs   nodev,nosuid,noexec 0 0
+devpts                   /dev/pts       devpts  gid=5,mode=620      0 0
+sysfs                    /sys           sysfs   defaults            0 0
+proc                     /proc          proc    defaults            0 0
+
