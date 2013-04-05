@@ -1,0 +1,10 @@
+## MANAGED BY PUPPET ##
+# useradd defaults file
+GROUP=100
+HOME=/home
+INACTIVE=35
+EXPIRE=
+SHELL=/bin/bash
+SKEL=/etc/skel
+CREATE_MAIL_SPOOL=yes
+
