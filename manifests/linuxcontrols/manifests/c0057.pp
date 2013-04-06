@@ -3,6 +3,6 @@ class cis::linuxcontrols::c0057 {
   file {'/etc/anacrontab':
     owner => root,
     group => root,
-    mode  => 0600,
+    mode  => '0600',
   }
 }

@@ -13,9 +13,9 @@ class cis::linuxcontrols::c0015 {
 # CIS RHEL6 Control 4.2.7
 # CIS RHEL6 Control 4.2.8
   file {'/etc/sysctl.conf':
-  	source  => "puppet:///modules/cis-puppet/linuxcontrols/el6/etc/sysctl.conf",
+    source  => 'puppet:///modules/cis/linuxcontrols/el6/etc/sysctl.conf',
     user    => root,
     group   => root,
-    mode    => 0640,
-  	}
-} 
+    mode    => '0640',
+  }
+}

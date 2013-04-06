@@ -11,10 +11,9 @@ class cis::linuxcontrols::c0067 {
 # CIS RHEL6 Control 6.2.10
 # CIS RHEL6 Control 6.2.11
 # CIS RHEL6 Control 6.2.12
-# CIS RHEL6 Control 6.2.13, please review sshd_config file as you may make changes
-# while staying in compliance
+# CIS RHEL6 Control 6.2.13, please review sshd_config file as you may make
+# changes while staying in compliance
 # CIS RHEL6 Control 6.2.14
-
   package { 'openssh-server':
     ensure  => present,
     before  => File['/etc/ssh/sshd_config'],

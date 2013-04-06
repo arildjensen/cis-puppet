@@ -13,11 +13,10 @@ class cis::linuxcontrols::c0000 {
 # CIS RHEL6 Control 1.1.15
 # CIS RHEL6 Control 1.1.16
   file {'/etc/fstab':
-#  	source  => "puppet:///modules/cis-puppet/linuxcontrols/el6/etc/fstab",
-  	owner   => root,
-  	group   => root,
-  	mode    => 0600,
-  	}
+    owner   => root,
+    group   => root,
+    mode    => '0600',
+  }
   mount {'/tmp':
     options => 'nodev,nosuid,noexec',
   }

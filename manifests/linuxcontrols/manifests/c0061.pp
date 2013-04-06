@@ -3,6 +3,6 @@ class cis::linuxcontrols::c0061 {
   file {'/etc/cron.weekly':
     owner => root,
     group => root,
-    mode  => 0600,
+    mode  => '0600',
   }
 }

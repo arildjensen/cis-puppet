@@ -3,6 +3,6 @@ class cis::linuxcontrols::c0060 {
   file {'/etc/cron.daily':
     owner => root,
     group => root,
-    mode  => 0600,
+    mode  => '0600',
   }
 }

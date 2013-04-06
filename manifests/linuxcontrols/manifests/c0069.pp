@@ -4,7 +4,6 @@ class cis::linuxcontrols::c0069 {
     enabled     => true,
     hasrestart  => true,
     hasstatus   => true,
-    subscribe   =>
-    File['/etc/ssh/sshd_config'},
+    subscribe   => File['/etc/ssh/sshd_config'},
   }
 }

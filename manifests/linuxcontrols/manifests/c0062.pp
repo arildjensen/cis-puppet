@@ -3,6 +3,6 @@ class cis::linuxcontrols::c0062 {
   file {'/etc/cron.monthly':
     owner => root,
     group => root,
-    mode  => 0600,
+    mode  => '0600',
   }
 }

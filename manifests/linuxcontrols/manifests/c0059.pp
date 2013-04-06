@@ -3,6 +3,6 @@ class cis::linuxcontrols::c0059 {
   file {'/etc/cron.hourly':
     owner => root,
     group => root,
-    mode  => 0600,
+    mode  => '0600',
   }
 }
