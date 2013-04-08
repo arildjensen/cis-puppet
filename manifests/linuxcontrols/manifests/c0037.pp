@@ -14,7 +14,7 @@ class cis::linuxcontrols::c0037 {
     source  => 'puppet:///modules/cis/linuxcontrols/el6/etc/sysconfig/ntpd',
     owner   => root,
     group   => root,
-    mode    => '0640'
+    mode    => '0640',
     notify  => Package['ntp'],
   }
 }
