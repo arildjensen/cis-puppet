@@ -1,4 +1,4 @@
-class cis::el6 {
+class cis::el6all {
   include cis::el6::1_1_10
   include cis::el6::1_1_14
   include cis::el6::1_1_15
