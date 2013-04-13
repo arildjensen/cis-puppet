@@ -9,7 +9,7 @@ class cis::linuxcontrols::c0084 {
     }
     cron {'f0003.sh':
       command => '/usr/local/sbin/f0003.sh',
-      user    => 'root',
+      owner   => 'root',
       hour    => 3,
       minute  => 33,
     }

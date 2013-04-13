@@ -18,7 +18,7 @@ class cis::linuxcontrols::c0053 {
       'x86_64'  => 'puppet:///modules/cis/linuxcontrols/el6/etc/audit/audit.rules.64',
       default   => 'puppet:///modules/cis/linuxcontrols/el6/etc/audit/audit.rules.32',
     },
-    user    => root,
+    owner   => root,
     group   => root,
     mode    => '0640',
     notify  => Service['auditd'],
