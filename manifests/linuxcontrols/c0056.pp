@@ -1,6 +1,6 @@
 class cis::linuxcontrols::c0056 {
 # CIS RHEL6 Control 6.1.2
-  service {'cron':
+  service {'crond':
     ensure      => running,
     enable      => true,
     hasrestart  => true,
