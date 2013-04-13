@@ -2,7 +2,7 @@ class cis::linuxcontrols::c0084 {
 # CIS RHEL6 9.1.12
 # Same as c0081, except look for files belonging to non-existing groups
     file {'/usr/local/sbin/f0003.sh':
-      source => 'puppet:///modules/cis/el6/scripts/f0003.sh',
+      source => 'puppet:///modules/cis/linuxcontrols/scripts/f0003.sh',
       owner  => root,
       group  => root,
       mode   => '0700',
