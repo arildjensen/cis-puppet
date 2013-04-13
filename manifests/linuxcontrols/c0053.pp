@@ -15,8 +15,8 @@ class cis::linuxcontrols::c0053 {
 # CIS RHEL6 Control 5.2.18
   file {'/etc/audit/audit.rules':
     source => $hardwaremode ? {
-      'x86_64'  => 'puppet:///modules/cis/linuxcontrols/el6/etc/audit/audit.rules.64',
-      default   => 'puppet:///modules/cis/linuxcontrols/el6/etc/audit/audit.rules.32',
+      'x86_64'  => 'puppet:///modules/cis/el6/etc/audit/audit.rules.64',
+      default   => 'puppet:///modules/cis/el6/etc/audit/audit.rules.32',
     },
     owner   => root,
     group   => root,

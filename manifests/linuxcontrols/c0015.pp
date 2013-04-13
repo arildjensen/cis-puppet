@@ -13,7 +13,7 @@ class cis::linuxcontrols::c0015 {
 # CIS RHEL6 Control 4.2.7
 # CIS RHEL6 Control 4.2.8
   file {'/etc/sysctl.conf':
-    source  => 'puppet:///modules/cis/linuxcontrols/el6/etc/sysctl.conf',
+    source  => 'puppet:///modules/cis/el6/etc/sysctl.conf',
     owner   => root,
     group   => root,
     mode    => '0640',

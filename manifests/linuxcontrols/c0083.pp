@@ -3,14 +3,14 @@ class cis::linuxcontrols::c0083 {
 # Push a script that looks for unowned files out, add to nightly crontab, add
 # a fact that reads the associated log file.
   file {'/usr/local/sbin/f0002.sh':
-    source => 'puppet:///modules/cis/linuxcontrols/scripts/f0002.sh',
+    source => 'puppet:///modules/cis/scripts/f0002.sh',
     owner  => root,
     group  => root,
     mode   => '0700',
   }
   cron {'f0002.sh':
     command => '/usr/local/sbin/f0002.sh',
-    owner   => 'root',
+    user    => 'root',
     hour    => 4,
     minute  => 44,
   }
