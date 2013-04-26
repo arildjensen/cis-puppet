@@ -1,0 +1,17 @@
+$ModLoad imuxsock
+$ModLoad imklog
+$ActionFileDefaultTemplate RSYSLOG_TraditionalFileFormat
+$IncludeConfig /etc/rsyslog.d/*.conf
+
+*.info;mail.none;authpriv.none;cron.none	/var/log/messages
+authpriv.*					                      /var/log/secure
+mail.*						                       -/var/log/maillog
+cron.*					                        	/var/log/cron
+*.emerg						                        *
+uucp,news.crit					                  /var/log/spooler
+local7.*					                        /var/log/boot.log
+
+## Start Puppet code
+## Configure forwarding to a central syslog server.
+*.* @@<%= logserver %>
+## End Puppet code

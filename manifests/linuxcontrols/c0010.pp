@@ -1,5 +1,10 @@
+# Class cis::linuxcontrols::c0010
+#
+# Check for unconfined daemons. The custom fact 'f0000' will output pass or
+# fail.
+#
+
 class cis::linuxcontrols::c0010 {
-# CIS RHEL6 Control 1.4.6
   file {'/usr/local/sbin/f0000.sh':
     source => 'puppet:///modules/cis/linuxcontrols/scripts/f0000.sh',
     owner  => root,

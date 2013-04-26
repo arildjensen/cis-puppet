@@ -1,5 +1,9 @@
+# Class cis::linuxcontrols::c0016
+#
+# Ensure telnet server is not present on the system.
+#
+
 class cis::linuxcontrols::c0016 {
-# CIS RHEL6 Control 2.1.1
   package {'telnet-server':
     ensure => absent,
   }

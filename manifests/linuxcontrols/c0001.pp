@@ -1,5 +1,9 @@
+# Class cis::linuxcontrols::c0001
+#
+# Enforces restrictive permissions on temp directory.
+#
+
 class cis::linuxcontrols::c0001 {
-# CIS RHEL6 Control 1.1.17
   file {'/tmp':
     ensure  => directory,
     owner   => root,

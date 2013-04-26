@@ -1,5 +1,9 @@
+# Class cis::linuxcontrols::c0009
+#
+# Ensure MCS Translation Service is not present on the system.
+#
+
 class cis::linuxcontrols::c0009 {
-# CIS RHEL6 Control 1.4.5
   package {'mcstrans':
     ensure => absent,
   }

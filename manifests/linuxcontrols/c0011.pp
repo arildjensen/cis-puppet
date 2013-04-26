@@ -1,5 +1,9 @@
+# Class cis::linuxcontrols::c0011
+#
+# Ensure restrictive permissions on the Grub configuration file.
+#
+
 class cis::linuxcontrols::c0011 {
-# CIS RHEL6 Control 1.5.1
   file {'/etc/grub.conf':
     owner => root,
     group => root,

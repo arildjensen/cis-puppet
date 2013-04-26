@@ -1,5 +1,9 @@
+# Class cis::linuxcontrols::c0002
+#
+# Ensure the Red Hat GPG encryption key is installed.
+#
+
 class cis::linuxcontrols::c0002 {
-# CIS RHEL6 Control 1.2.2
   package {'gpg-pubkey':
     ensure  => installed,
   }

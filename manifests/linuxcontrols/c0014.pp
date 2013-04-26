@@ -1,5 +1,9 @@
+# Class cis::linuxcontrols::c0015
+#
+# Disable core dumps.
+#
+
 class cis::linuxcontrols::c0014 {
-# CIS RHEL6 Control 1.6.1
   file {'/etc/security/limits.conf':
     source  => 'puppet:///modules/cis/el6/etc/security/limits.conf',
     owner   => root,
