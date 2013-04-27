@@ -1,5 +1,9 @@
+# Class cis::Linuxcontrols::c0032
+#
+# Ensure echo-stream service is not present on the system.
+#
+
 class cis::linuxcontrols::c0032 {
-# CIS RHEL6 Control 2.1.17
   package {'echo-stream':
     ensure => absent,
   }

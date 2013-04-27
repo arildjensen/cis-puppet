@@ -1,5 +1,9 @@
+# Class cis::linuxcontrols::c0029
+#
+# Ensure daytime-dgram service is not present on the system.
+#
+
 class cis::linuxcontrols::c0029 {
-# CIS RHEL6 Control 2.1.14
   package {'daytime-dgram':
     ensure => absent,
   }

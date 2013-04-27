@@ -1,5 +1,9 @@
+# Class cis::linuxcontrols::c0033
+#
+# Ensure tcpmux-server service is not present on the system.
+#
+
 class cis::linuxcontrols::c0033 {
-# CIS RHEL6 Control 2.1.18
   package {'tcpmux-server':
     ensure => absent,
   }

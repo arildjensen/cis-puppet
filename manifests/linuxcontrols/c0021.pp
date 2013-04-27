@@ -1,5 +1,9 @@
+# Class cis::linuxcontrols::c0021
+#
+# Ensure NIS server is not present on the system.
+#
+
 class cis::linuxcontrols::c0021 {
-# CIS RHEL6 Control 2.1.6
   package {'ypserv':
     ensure => absent,
   }

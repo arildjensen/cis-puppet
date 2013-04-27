@@ -1,5 +1,9 @@
+# Class cis::linuxcontrols::c0035
+#
+# Ensure Avahi zeroconf service is not present on the system.
+#
+
 class cis::linuxcontrols::c0035 {
-# CIS RHEL6 Control 3.3
   package {'avahi-daemon':
     ensure => absent,
   }

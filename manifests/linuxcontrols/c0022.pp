@@ -1,5 +1,10 @@
+# Class cis::linuxcontrols::c0022
+#
+# Ensure tftp client (trivial file transfer protocol) is not present on the
+# system.
+#
+
 class cis::linuxcontrols::c0022 {
-# CIS RHEL6 Control 2.1.7
   package {'tftp':
     ensure => absent,
   }
