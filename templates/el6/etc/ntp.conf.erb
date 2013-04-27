@@ -1,0 +1,10 @@
+driftfile /var/lib/ntp/ntp.drift
+<% ntpserver.each do |pool| -%>
+server <%= pool %> iburst
+<% end -%>
+#server 0.pool.ntp.org iburst
+#server 1.pool.ntp.org iburst
+#server 2.pool.ntp.org iburst
+#server 3.pool.ntp.org iburst
+restrict default kod nomodify notrap nopeer noquery
+restrict -6 default kod nomodify notrap nopeer noquery

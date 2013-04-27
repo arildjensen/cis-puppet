@@ -1,5 +1,9 @@
+# Class cis::linuxcontrols::c0039
+#
+# Ensure hosts.allow is protected against unauthorized modifications.
+#
+
 class cis::linuxcontrols::c0039 {
-# CIS RHEL6 Control 4.5.3
   file {'/etc/hosts.allow':
     owner => root,
     group => root,

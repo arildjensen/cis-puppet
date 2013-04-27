@@ -1,5 +1,9 @@
+# Class cis::linuxcontrols::c0043
+#
+# Ensure rsyslog service is running.
+#
+
 class cis::linuxcontrols::c0043 {
-# CIS RHEL6 Control 5.1.2
   service {'rsyslog':
     enable => true,
   }
