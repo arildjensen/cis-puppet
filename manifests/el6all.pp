@@ -1,3 +1,9 @@
+# Class cis::el6all
+#
+# Implements all CIS controls found the the RHEL6 benchmark. Use this class as
+# base if any deviations are necessary.
+#
+
 class cis::el6all {
   include cis::el6::1_1_10
   include cis::el6::1_1_14
