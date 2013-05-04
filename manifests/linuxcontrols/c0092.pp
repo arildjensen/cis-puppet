@@ -1,5 +1,11 @@
+# Class cis::linuxcontrols:c0092
+#
+# Ensure no vulnerable dot-files exists.
+#
+# This is a reported, not enforced, control item.
+#
+
 class cis::linuxcontrols::c0092 {
-# CIS RHEL6 9.2.8
   file {'/usr/local/sbin/f0010.sh':
     source => 'puppet:///modules/cis/linuxcontrols/scripts/f0010.sh',
     owner  => root,

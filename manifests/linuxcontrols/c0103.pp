@@ -1,5 +1,11 @@
+# Class cis::linuxcontrols::c0103
+#
+# Ensure no .netrc files are prensent.
+#
+# This is a reported, not enforced, control item.
+#
+
 class cis::linuxcontrols::c0103 {
-# CIS RHEL6 9.2.20
   file {'/usr/local/sbin/f0021.sh':
     source => 'puppet:///modules/cis/linuxcontrols/scripts/f0021.sh',
     owner  => root,

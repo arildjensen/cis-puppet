@@ -1,5 +1,11 @@
+# Class cis::linuxcontrols::c0087
+#
+# Ensure no legacy "+" entries exist in the /etc/shadow file.
+#
+# This is a reported, not enforced, control item.
+#
+
 class cis::linuxcontrols::c0087 {
-# CIS RHEL6 9.2.3
   file {'/usr/local/sbin/f0006.sh':
     source => 'puppet:///modules/cis/linuxcontrols/scripts/f0006.sh',
     owner  => root,

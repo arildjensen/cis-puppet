@@ -1,5 +1,11 @@
+# Class cis::linuxcontrols::c0097
+#
+# Ensure that defined home directories exist.
+#
+# This is a reported, not enforced, control item.
+#
+
 class cis::linuxcontrols::c0097 {
-# CIS RHEL6 9.2.13
   file {'/usr/local/sbin/f0015.sh':
     source => 'puppet:///modules/cis/linuxcontrols/scripts/f0015.sh',
     owner  => root,

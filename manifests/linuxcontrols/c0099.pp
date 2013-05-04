@@ -1,5 +1,11 @@
+# Class cis::linuxcontrols::c0099
+#
+# Ensure no duplicate UIDs exist.
+#
+# This is a reported, not enforced, control item.
+#
+
 class cis::linuxcontrols::c0099 {
-# CIS RHEL6 9.2.15
   file {'/usr/local/sbin/f0017.sh':
     source => 'puppet:///modules/cis/linuxcontrols/scripts/f0017.sh',
     owner  => root,

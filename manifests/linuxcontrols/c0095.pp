@@ -1,5 +1,11 @@
+# Class cis::linuxcontrols::c0095
+#
+# Ensures no .rhosts files are present.
+#
+# This is a reported, not enforced, control item.
+#
+
 class cis::linuxcontrols::c0095 {
-# CIS RHEL6 9.2.11
   file {'/usr/local/sbin/f0013.sh':
     source => 'puppet:///modules/cis/linuxcontrols/scripts/f0013.sh',
     owner  => root,

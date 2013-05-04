@@ -1,6 +1,9 @@
+# Class cis::linuxcontrols::c0082
+#
+# Restrict access to the /etc/group file.
+#
+
 class cis::linuxcontrols::c0082 {
-# CIS RHEL6 9.1.5
-# CIS RHEL6 9.1.9
   file {'/etc/group':
     owner   => root,
     group   => root,

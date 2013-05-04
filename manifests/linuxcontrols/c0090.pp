@@ -1,5 +1,9 @@
+# Class cis::linuxcontrols:c0090
+#
+# Ensure root PATH integrity.
+#
+
 class cis::linuxcontrols::c0090 {
-# CIS RHEL6 9.2.6
   file {'/root/.bash_logout':
     source  => 'puppet:///modules/cis/el6/root/bash_logout',
     owner   => root,

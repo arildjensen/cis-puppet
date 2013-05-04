@@ -1,5 +1,11 @@
+# Class cis::linuxcontrols:c0086
+#
+# Ensure no legacy "+" entries exist in the /etc/password file.
+#
+# This is a reported, not enforced, control item.
+#
+
 class cis::linuxcontrols::c0086 {
-# CIS RHEL6 9.2.2
   file {'/usr/local/sbin/f0005.sh':
     source => 'puppet:///modules/cis/linuxcontrols/scripts/f0005.sh',
     owner  => root,

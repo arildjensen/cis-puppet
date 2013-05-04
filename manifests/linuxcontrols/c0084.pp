@@ -1,6 +1,11 @@
+# Class cis::linuxcontrols:c0084
+#
+# Find un-grouped files and directories.
+#
+# This is a reported, not enforced, control item.
+#
+
 class cis::linuxcontrols::c0084 {
-# CIS RHEL6 9.1.12
-# Same as c0081, except look for files belonging to non-existing groups
     file {'/usr/local/sbin/f0003.sh':
       source => 'puppet:///modules/cis/linuxcontrols/scripts/f0003.sh',
       owner  => root,

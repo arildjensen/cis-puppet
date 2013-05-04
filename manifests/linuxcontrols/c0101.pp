@@ -1,5 +1,11 @@
+# Class cis::linuxcontrols::c0101
+#
+# Ensure no duplicate user names are present.
+#
+# This is a repoted, not enforced, control item.
+#
+
 class cis::linuxcontrols::c0101 {
-# CIS RHEL6 9.2.18
   file {'/usr/local/sbin/f0019.sh':
     source => 'puppet:///modules/cis/linuxcontrols/scripts/f0019.sh',
     owner  => root,

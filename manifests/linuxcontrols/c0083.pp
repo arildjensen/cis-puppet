@@ -1,7 +1,11 @@
+# Class cis::linuxcontrols::c0083
+#
+# Find un-owned files and directories. Runs as a cron job nightly.
+#
+# This is a reported, not enforced, control item.
+#
+
 class cis::linuxcontrols::c0083 {
-# CIS RHEL6 9.1.11
-# Push a script that looks for unowned files out, add to nightly crontab, add
-# a fact that reads the associated log file.
   file {'/usr/local/sbin/f0002.sh':
     source => 'puppet:///modules/cis/linuxcontrols/scripts/f0002.sh',
     owner  => root,

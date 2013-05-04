@@ -1,5 +1,11 @@
+# Class cis::linuxcontrols::c0096
+#
+# Ensure users are assigned home directories.
+#
+# This is a reported, not enforced, control item.
+#
+
 class cis::linuxcontrols::c0096 {
-# CIS RHEL6 9.2.12
   file {'/usr/local/sbin/f0014.sh':
     source => 'puppet:///modules/cis/linuxcontrols/scripts/f0014.sh',
     owner  => root,
