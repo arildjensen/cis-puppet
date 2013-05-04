@@ -1,5 +1,9 @@
+# Class cis::linuxcontrols::c0062
+#
+# Restrict access to the con monthly configuration file.
+#
+
 class cis::linuxcontrols::c0062 {
-# CIS RHEL6 Control 6.1.8
   file {'/etc/cron.monthly':
     owner => root,
     group => root,

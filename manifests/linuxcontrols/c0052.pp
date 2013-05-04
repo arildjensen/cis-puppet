@@ -1,5 +1,9 @@
+# Class cis::linuxcontrols::c0052
+#
+# Ensure auditd is enabled at boot to record system events.
+#
+
 class cis::linuxcontrols::c0052 {
-# CIS RHEL6 Control 5.2.2
   service {'auditd':
     enable => true,
     }

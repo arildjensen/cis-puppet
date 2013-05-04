@@ -1,5 +1,9 @@
+# Class cis::linuxcontrols::c0055
+#
+# Ensure the anacron daemon is present.
+#
+
 class cis::linuxcontrols::c0055 {
-# CIS RHEL6 Control 6.1.1
   package {'cronie-anacron':
     ensure => installed,
   }

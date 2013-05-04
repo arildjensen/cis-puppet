@@ -1,5 +1,9 @@
+# Class cis::linuxcontrols::c061
+#
+# Restrict access to the weekly cron configuration file.
+#
+
 class cis::linuxcontrols::c0061 {
-# CIS RHEL6 Control 6.1.7
   file {'/etc/cron.weekly':
     owner => root,
     group => root,

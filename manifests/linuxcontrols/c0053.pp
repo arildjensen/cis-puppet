@@ -1,18 +1,23 @@
+# Class cis::linuxcontrols::c0053
+#
+# Configure auditd to:
+# - Record events that modify data and time information
+# - Record events that modify user or group information
+# - Record events that modify the system's network environment
+# - Record events that modify the system's mandatory access controls
+# - Collect login and logout events
+# - Collect session initiation information
+# - Collect discretionary access control permission modification events
+# - Collect unsuccessful unauthorized access attempts to files
+# - Collect successful file system mounts
+# - Collect file deletion events by user
+# - Collect changes to system administration scope
+# - Collect system administrator actions (sudolog)
+# - Collect kernel module loading and unloading
+# - Make the audit configuration immutable
+#
+
 class cis::linuxcontrols::c0053 {
-# CIS RHEL6 Control 5.2.4
-# CIS RHEL6 Control 5.2.5
-# CIS RHEL6 Control 5.2.6
-# CIS RHEL6 Control 5.2.7
-# CIS RHEL6 Control 5.2.8
-# CIS RHEL6 Control 5.2.9
-# CIS RHEL6 Control 5.2.10
-# CIS RHEL6 Control 5.2.11
-# CIS RHEL6 Control 5.2.13
-# CIS RHEL6 Control 5.2.14
-# CIS RHEL6 Control 5.2.15
-# CIS RHEL6 Control 5.2.16
-# CIS RHEL6 Control 5.2.17
-# CIS RHEL6 Control 5.2.18
   file {'/etc/audit/audit.rules':
     source => $hardwaremode ? {
       'x86_64'  => 'puppet:///modules/cis/el6/etc/audit/audit.rules.64',

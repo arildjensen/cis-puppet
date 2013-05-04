@@ -1,5 +1,8 @@
+# Class cis::linuxcontrols::c0056
+#
+# Ensure the cron daemon is enabled.
+#
 class cis::linuxcontrols::c0056 {
-# CIS RHEL6 Control 6.1.2
   service {'crond':
     ensure      => running,
     enable      => true,
