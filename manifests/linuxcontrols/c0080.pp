@@ -1,6 +1,9 @@
+# Class cis::linuxcontrols::c0080
+#
+# Restrict access to the /etc/shadow file.
+#
+
 class cis::linuxcontrols::c0080 {
-# CIS RHEL6 9.1.3
-# CIS RHEL6 9.1.7
   file {'/etc/shadow':
     owner   => root,
     group   => root,

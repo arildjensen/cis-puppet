@@ -1,7 +1,11 @@
+# Class cis::linuxcontrols::c0071
+#
+# Require use of pam_cracklib, strong passwords using pam_passwdqc, limit
+# password reuse to the last 5, and restrict access to changing any of these
+# settings.
+#
+
 class cis::linuxcontrols::c0071 {
-# CIS RHEL6 Control 6.3.2
-# CIS RHEL6 Control 6.3.3
-# CIS RHEL6 Control 6.3.6
   file {'/etc/pam.d/system-auth':
     ensure  => link,
     target  => '/etc/pam.d/system-auth-ac',

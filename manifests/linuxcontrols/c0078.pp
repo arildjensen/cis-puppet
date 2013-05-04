@@ -1,6 +1,9 @@
+# Class cis::linuxcontrols::c0078
+#
+# Ensure a warning banner is presented upon login to the system.
+#
+
 class cis::linuxcontrols::c0078 {
-# CIS RHEL6 Control 8.1
-# CIS RHEL6 Control 8.2
   file {'/etc/issue.net':
     source  => 'puppet:///modules/cis/el6/etc/issue.net',
     owner   => root,
