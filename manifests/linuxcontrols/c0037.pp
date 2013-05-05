@@ -9,15 +9,13 @@
 class cis::linuxcontrols::c0037 {
   $ntpserver = hiera('cis::ntpserver',[ '0.pool.ntp.org', '1.pool.ntp.org',
       '2.pool.ntp.org', '3.pool.ntp.org' ])
-  }
 
   package {'ntp':
     ensure => installed,
   }
 
   file {'/etc/ntp.conf':
-    #source  => 'puppet:///modules/cis/el6/etc/ntp.conf',
-    source  => template('cis/el6/etc/ntp.conf.erb'),
+    content => template('cis/el6/etc/ntp.conf.erb'),
     owner   => root,
     group   => root,
     mode    => '0640',

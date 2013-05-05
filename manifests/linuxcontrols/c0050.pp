@@ -10,8 +10,7 @@ class cis::linuxcontrols::c0050 {
   $logserver = hiera('cis::logserver','log')
 
   file {'/etc/rsyslog.conf':
-    #source  => 'puppet:///modules/cis/el6/etc/rsyslog.conf',
-    source  => template('cis/el6/etc/rsyslog.conf.erb'),
+    content => template('cis/el6/etc/rsyslog.conf.erb'),
     owner   => root,
     group   => root,
     mode    => '0640',
