@@ -24,7 +24,7 @@ Some of the settings, such as which log server to use, can be specified by the
 user. Below is a sample hiera file containing all the current configurable
 settings:
 
-<code>
+```
 cis::logserver: 'syslog.localdomain'
 cis::ntpserver:
   - ntp1
@@ -33,7 +33,7 @@ cis::ntpserver:
 cis::aide_cron_check:
   hour: 6
   minute: 30
-</code>
+```
 
 Author
 ====
