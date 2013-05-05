@@ -5,7 +5,7 @@
 
 class cis::linuxcontrols::c0048 {
   file {'/var/log/spooler':
-    present => true,
+    ensure  => present,
     owner   => root,
     group   => root,
     mode    => '0600',

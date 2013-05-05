@@ -7,11 +7,7 @@
 #
 
 class cis::linuxcontrols::c0050 {
-  $logserver = hiera('cis::logserver')
-
-  if ! $logserver {
-      $logserver = 'log'
-  }
+  $logserver = hiera('cis::logserver','log')
 
   file {'/etc/rsyslog.conf':
     #source  => 'puppet:///modules/cis/el6/etc/rsyslog.conf',

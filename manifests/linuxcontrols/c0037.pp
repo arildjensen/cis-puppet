@@ -7,11 +7,8 @@
 #
 
 class cis::linuxcontrols::c0037 {
-  $ntpserver = hiera('cis::ntpserver')
-
-  if ! $ntpservers {
-    $ntpserver = [ '0.pool.ntp.org', '1.pool.ntp.org', '2.pool.ntp.org',
-      '3.pool.ntp.org' ]
+  $ntpserver = hiera('cis::ntpserver',[ '0.pool.ntp.org', '1.pool.ntp.org',
+      '2.pool.ntp.org', '3.pool.ntp.org' ])
   }
 
   package {'ntp':

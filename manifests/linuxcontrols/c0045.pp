@@ -5,7 +5,7 @@
 
 class cis::linuxcontrols::c0045 {
   file {'/var/log/secure':
-    present => true,
+    ensure  => present,
     owner   => root,
     group   => root,
     mode    => '0600',
