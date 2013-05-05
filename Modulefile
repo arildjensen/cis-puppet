@@ -1,5 +1,5 @@
 name 'arildjensen/cis'
-version '0.1.0'
+version '0.2.0'
 description "Puppet and Facter implementation of the Center for Internet
 Security (CIS) Security Configuration Benchmark for Red Hat Enterprise Linux
 (RHEL) 6 v.1.1.0."
