@@ -43,5 +43,6 @@ Written by Arild Jensen <ajensen@counter-attack.com> with source code repository
 
 Release History
 ==========
+- 0.2.1 - Added Apache 2.0 license
 - 0.2.0 - Added comments and implemented hiera support for some of the settings.
 - 0.1.0 - Initial release
