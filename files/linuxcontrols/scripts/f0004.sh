@@ -5,7 +5,7 @@
 
 COMMAND=`cat /etc/shadow | awk -F: '($2=="") {print $1}'`
 
-if [ x$FILES == x ]; then 
+if [ x$COMMAND == x ]; then 
   echo pass;
 else 
   echo fail;
