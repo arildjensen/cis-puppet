@@ -6,4 +6,4 @@ Security (CIS) Security Configuration Benchmark for Red Hat Enterprise Linux
 project_page 'https://github.com/arildjensen/cis-puppet'
 author 'Arild Jensen <ajensen@counter-attack.com>'
 
-dependency 'duritong/sysctl', '>= 3.0.0'
+dependency 'duritong/sysctl', '>= 0.0.2'
