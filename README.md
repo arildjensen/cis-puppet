@@ -1,3 +1,6 @@
+[![Build Status](https://travis-ci.org/arildjensen/cis-puppet.png?branch=master)](https://travis-ci.org/arildjensen/cis-puppet)
+
+
 Overview
 ========
  
