@@ -2,7 +2,7 @@
 
 driftfile /var/lib/ntp/ntp.drift
 
-<% ntpserver.each do |pool| -%>
+<% @ntpserver.each do |pool| -%>
 server <%= pool %> iburst
 <% end -%>
 
