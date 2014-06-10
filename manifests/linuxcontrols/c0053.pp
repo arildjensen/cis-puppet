@@ -19,7 +19,7 @@
 
 class cis::linuxcontrols::c0053 {
   file {'/etc/audit/audit.rules':
-    source => $hardwaremode ? {
+    source => $hardwaremodel ? {
       'x86_64'  => 'puppet:///modules/cis/el6/etc/audit/audit.rules.64',
       default   => 'puppet:///modules/cis/el6/etc/audit/audit.rules.32',
     },
