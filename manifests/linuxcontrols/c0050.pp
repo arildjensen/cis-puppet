@@ -1,13 +1,13 @@
 # Class cis::linuxcontrols::c0050
 #
-# Read in the remote syslog server name from hiera (cis::logserver)
-# or, if not found, use the default 'log'. Then enforce the rsyslog
-# configuration, including setting the proper remote syslog server,
-# and restart rsyslog service if necessary.
-#
+# Read in the remote syslog server name from cis::logserver
+# which can come from hiera automatically, or passed through the cis::
+# parameterized class. If both are not set, the default from cis::params is
+# used.
 
-class cis::linuxcontrols::c0050 {
-  $logserver = hiera('cis::logserver','log')
+class cis::linuxcontrols::c0050 (
+  $logserver = $cis::logserver
+  ) {
 
   file {'/etc/rsyslog.conf':
     content => template('cis/el6/etc/rsyslog.conf.erb'),

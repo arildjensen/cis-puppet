@@ -1,11 +1,14 @@
 # Class cis::linuxcontrols::c0005
 #
-# Setup cron job to run AIDE check every 24 hours. Exact time to run is read
-# from hiera (cis::aide_check_cron). If not set the default of 5 AM is used.
+# Setup cron job to run AIDE check every 24 hours. Exact time to run is read 
+# from $cis::aide_check_cron, which can come from hiera automatically, or
+# passed through the cis:: parameterized class. If both are not set, the
+# default from cis::params is used.
 #
 
-class cis::linuxcontrols::c0005 {
-  $aide_check_cron = hiera('cis::aide_check_cron',{hour=>5,minute=>0})
+class cis::linuxcontrols::c0005 (
+  $aide_check_cron = $cis::aide_check_cron
+  ) {
   $aide_check_hour = $aide_check_cron[hour]
   $aide_check_min  = $aide_check_cron[minute]
 
