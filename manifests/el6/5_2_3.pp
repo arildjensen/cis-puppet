@@ -4,5 +4,5 @@
 #
 
 class cis::el6::5_2_3   {
-  include cis::linuxcontrols::c0006
+  include cis::linuxcontrols::c00061
 }

@@ -1,8 +1,22 @@
 class cis::linuxcontrols::c0006 {
 # CIS RHEL6 Control 1.4.1
-# CIS RHEL6 Control 5.2.3
 # TODO grub2 is not included in el6
-#  file{'/etc/default/grub':
-#   source  => "puppet:///modules/cis/el6/etc/default/grub",
-# }
+
+  augeas { 'grub.conf/selinux': 
+    incl => '/boot/grub/grub.conf', 
+    lens => 'grub.lns', 
+    changes => [ 
+      'rm title[*]/kernel/selinux', 
+    ], 
+    onlyif => "get title[*]/kernel/selinux == '0'",
+  }
+
+  augeas { 'grub.conf/enforcing': 
+    incl => '/boot/grub/grub.conf', 
+    lens => 'grub.lns', 
+    changes => [ 
+      'rm title[*]/kernel/enforcing', 
+    ], 
+    onlyif => "get title[*]/kernel/enforcing == '0'",
+  }
 }
