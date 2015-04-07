@@ -1,13 +1,13 @@
 # Class cis::linuxcontrols::c0003
 #
 # Ensure cryptographic verification of software packages using gpgcheck is
-# enabled and the YUM configuration file permissions are restrictive.
+# enabled.
 #
 class cis::linuxcontrols::c0003 {
-  file {'/etc/yum.conf':
-    source  => 'puppet:///modules/cis/el6/etc/yum.conf',
-    owner   => root,
-    group   => root,
-    mode    => '0640',
+  augeas { 'Enable yum gpgcheck':
+    context => '/files/etc/yum.conf/main',
+    changes => 'set gpgcheck 1',
+    incl => '/etc/yum.conf',
+    lens => 'Yum.lns'
   }
 }
