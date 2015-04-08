@@ -7,7 +7,7 @@ class cis::linuxcontrols::c0003 {
   augeas { 'Enable yum gpgcheck':
     context => '/files/etc/yum.conf/main',
     changes => 'set gpgcheck 1',
-    incl => '/etc/yum.conf',
-    lens => 'Yum.lns'
+    incl    => '/etc/yum.conf',
+    lens    => 'Yum.lns'
   }
 }
