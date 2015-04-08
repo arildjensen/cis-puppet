@@ -5,8 +5,8 @@
 
 class cis::linuxcontrols::c0080 {
   file {'/etc/shadow':
-    owner   => root,
-    group   => root,
-    mode    => '0000',
+    owner => root,
+    group => root,
+    mode  => '0000',
   }
 }

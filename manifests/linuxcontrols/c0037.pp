@@ -1,14 +1,13 @@
 # Class cis::linuxcontrols::c0037
 #
-# Read in the ntp pool servers from hiera (cis::ntpserver)
-# or, if not found, use the defaults per ntp.org. Then enforce the ntp
-# configuration, using custom or default pool servers, and restart the ntp
-# service if necessary.
+# Read in the ntp pool servers from cis::ntpserver which can come from hiera
+# automatically, or passed through the cis parameterized class. If both are not
+# set, the default from cis::params is used.
 #
 
-class cis::linuxcontrols::c0037 {
-  $ntpserver = hiera('cis::ntpserver',[ '0.pool.ntp.org', '1.pool.ntp.org',
-      '2.pool.ntp.org', '3.pool.ntp.org' ])
+class cis::linuxcontrols::c0037 (
+  $ntpserver = $cis::ntpserver
+  ) {
 
   package {'ntp':
     ensure => installed,
@@ -23,10 +22,10 @@ class cis::linuxcontrols::c0037 {
   }
 
   file {'/etc/sysconfig/ntpd':
-    source  => 'puppet:///modules/cis/el6/etc/sysconfig/ntpd',
-    owner   => root,
-    group   => root,
-    mode    => '0640',
-    notify  => Package['ntp'],
+    source => 'puppet:///modules/cis/el6/etc/sysconfig/ntpd',
+    owner  => root,
+    group  => root,
+    mode   => '0640',
+    notify => Package['ntp'],
   }
 }

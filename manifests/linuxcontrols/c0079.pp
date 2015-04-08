@@ -5,8 +5,8 @@
 
 class cis::linuxcontrols::c0079 {
   file {'/etc/passwd':
-    owner   => root,
-    group   => root,
-    mode    => '0644',
+    owner => root,
+    group => root,
+    mode  => '0644',
   }
 }

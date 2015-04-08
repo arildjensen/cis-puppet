@@ -6,9 +6,9 @@
 #
 class cis::linuxcontrols::c0000 {
   file {'/etc/fstab':
-    owner   => root,
-    group   => root,
-    mode    => '0600',
+    owner => root,
+    group => root,
+    mode  => '0600',
   }
 
   mount {'/tmp':

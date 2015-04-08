@@ -18,7 +18,7 @@
 
 class cis::linuxcontrols::c0067 {
   package { 'openssh-server':
-    ensure  => present,
-    before  => File['/etc/ssh/sshd_config'],
+    ensure => present,
+    before => File['/etc/ssh/sshd_config'],
   }
 }

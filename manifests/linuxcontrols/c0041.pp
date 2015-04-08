@@ -5,13 +5,13 @@
 
 class cis::linuxcontrols::c0041 {
   package {'iptables':
-    ensure  => installed,
-    before  => Service['iptables'],
+    ensure => installed,
+    before => Service['iptables'],
   }
   service {'iptables':
-    ensure      => running,
-    enable      => true,
-    hasrestart  => true,
-    hasstatus   => true,
+    ensure     => running,
+    enable     => true,
+    hasrestart => true,
+    hasstatus  => true,
   }
 }

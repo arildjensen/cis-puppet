@@ -7,9 +7,9 @@
 
 class cis::linuxcontrols::c0073 {
   file {'/etc/login.defs':
-    source  => 'puppet:///modules/cis/el6/etc/login.defs',
-    owner   => root,
-    group   => root,
-    mode    => '0644',
+    source => 'puppet:///modules/cis/el6/etc/login.defs',
+    owner  => root,
+    group  => root,
+    mode   => '0644',
   }
 }

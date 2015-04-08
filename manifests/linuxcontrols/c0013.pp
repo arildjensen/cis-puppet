@@ -6,9 +6,9 @@
 
 class cis::linuxcontrols::c0013 {
   file {'/etc/sysconfig/init':
-    source  => 'puppet:///modules/cis/el6/etc/sysconfig/init',
-    owner   => root,
-    group   => root,
-    mode    => '0640',
+    source => 'puppet:///modules/cis/el6/etc/sysconfig/init',
+    owner  => root,
+    group  => root,
+    mode   => '0640',
   }
 }

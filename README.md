@@ -36,6 +36,22 @@ cis::ntpserver:
 cis::aide_cron_check:
   hour: 6
   minute: 30
+cis::grubpassword: '$6$O9gDqo8exRu4v/NO$4m4op02Ss/ZrJM9e3bclXhfriQj4NdKpUNDtuJvdEdYA1dH8AMcXd.CmQW./6qLfXSyJSYdU8NNPm9M1x3KEj/'
+```
+
+The cis class can also optionally be used to specify settings. For example:
+
+```
+class { 'cis':
+  logserver       => 'syslog.localdomain',
+  ntpserver       => [
+    '0.pool.ntp.org', 
+    '1.pool.ntp.org', 
+    '2.pool.ntp.org', 
+    '3.pool.ntp.org', ],
+  aide_cron_check => { hour => 6, minute => 30 },
+  grubpassword    => '$6$O9gDqo8exRu4v/NO$4m4op02Ss/ZrJM9e3bclXhfriQj4NdKpUNDtuJvdEdYA1dH8AMcXd.CmQW./6qLfXSyJSYdU8NNPm9M1x3KEj/',
+}
 ```
 
 Author
