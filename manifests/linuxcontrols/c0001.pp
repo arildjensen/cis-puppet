@@ -5,9 +5,9 @@
 
 class cis::linuxcontrols::c0001 {
   file {'/tmp':
-    ensure  => directory,
-    owner   => root,
-    group   => root,
-    mode    => '1777',
+    ensure => directory,
+    owner  => root,
+    group  => root,
+    mode   => '1777',
   }
 }

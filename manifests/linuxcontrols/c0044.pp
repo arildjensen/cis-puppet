@@ -5,9 +5,9 @@
 
 class cis::linuxcontrols::c0044 {
   file {'/var/log/messages':
-    ensure  => present,
-    owner   => root,
-    group   => root,
-    mode    => '0600',
+    ensure => present,
+    owner  => root,
+    group  => root,
+    mode   => '0600',
   }
 }
