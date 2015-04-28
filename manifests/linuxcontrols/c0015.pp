@@ -20,19 +20,19 @@
 
 class cis::linuxcontrols::c0015 {
 
-    sysctl::value { "fs.suid_dumpable": value => "0" }
-    sysctl::value { "kernel.exec-shield": value => "1" }
-    sysctl::value { "kernel.randomize_va_space": value => "2" }
-    sysctl::value { "net.ipv4.conf.all.send_redirects": value => "0" }
-    sysctl::value { "net.ipv4.conf.default.send_redirects": value => "0" }
-    sysctl::value { "net.ipv4.conf.all.accept_source_route": value => "0" }
-    sysctl::value { "net.ipv4.conf.all.accept_redirects": value => "0" }
-    sysctl::value { "net.ipv4.conf.all.secure_redirects": value => "0" }
-    sysctl::value { "net.ipv4.conf.all.log_martians": value => "1"}
-    sysctl::value { "net.ipv4.conf.default.accept_redirects": value => "0" }
-    sysctl::value { "net.ipv4.conf.default.secure_redirects": value => "0" }
-    sysctl::value { "net.ipv4.icmp_echo_ignore_broadcasts": value => "1" }
-    sysctl::value { "net.ipv4.icmp_ignore_bogus_error_messages": value => "1" }
-    sysctl::value { "net.ipv4.conf.all.rp_filter": value => "1" }
-    sysctl::value { "net.ipv4.tcp_max_syn_backlog": value => "4096" }
+    sysctl::value { 'fs.suid_dumpable': value => '0' }
+    sysctl::value { 'kernel.exec-shield': value => '1' }
+    sysctl::value { 'kernel.randomize_va_space': value => '2' }
+    sysctl::value { 'net.ipv4.conf.all.send_redirects': value => '0' }
+    sysctl::value { 'net.ipv4.conf.default.send_redirects': value => '0' }
+    sysctl::value { 'net.ipv4.conf.all.accept_source_route': value => '0' }
+    sysctl::value { 'net.ipv4.conf.all.accept_redirects': value => '0' }
+    sysctl::value { 'net.ipv4.conf.all.secure_redirects': value => '0' }
+    sysctl::value { 'net.ipv4.conf.all.log_martians': value => '1'}
+    sysctl::value { 'net.ipv4.conf.default.accept_redirects': value => '0' }
+    sysctl::value { 'net.ipv4.conf.default.secure_redirects': value => '0' }
+    sysctl::value { 'net.ipv4.icmp_echo_ignore_broadcasts': value => '1' }
+    sysctl::value { 'net.ipv4.icmp_ignore_bogus_error_messages': value => '1' }
+    sysctl::value { 'net.ipv4.conf.all.rp_filter': value => '1' }
+    sysctl::value { 'net.ipv4.tcp_max_syn_backlog': value => '4096' }
 }
