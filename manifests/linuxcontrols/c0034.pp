@@ -4,7 +4,24 @@
 #
 
 class cis::linuxcontrols::c0034 {
-  package {'xorg-x11-libs':
-    ensure => absent,
+  case $::operatingsystem {
+    'RedHat': { 
+      package {'xorg-x11-libs':
+        ensure => absent,
+      }
+    }
+    'Amazon': {
+      package { 'xorg-x11-server-common':
+        ensure => absent,
+      }
+
+      file { '/etc/inittab':
+        source => 'puppet:///modules/cis/awslinux/etc/inittab',
+        owner   => root,
+        group   => root,
+        mode    => '0640',
+      }
+    }
+    default: { fail("ERROR: unsupported OS = $::operatingsystem") }
   }
 }

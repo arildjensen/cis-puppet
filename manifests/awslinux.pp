@@ -15,7 +15,6 @@ class cis::awslinux {
   include cis::awslinux::1_1_17
   include cis::awslinux::1_2_1
   include cis::awslinux::1_2_2
-  # include cis::awslinux::1_2_3
   include cis::awslinux::1_3_1
   include cis::awslinux::1_3_2
   include cis::awslinux::1_4_1
@@ -28,35 +27,32 @@ class cis::awslinux {
   include cis::awslinux::1_5_1
   include cis::awslinux::1_5_2
   include cis::awslinux::1_5_3
-  # include cis::awslinux::1_5_4
-  # include cis::awslinux::1_5_5
   include cis::awslinux::1_6_1
   include cis::awslinux::1_6_2
-  # include cis::awslinux::1_6_3
-  # include cis::awslinux::2_1_10
-  # include cis::awslinux::2_1_11
-  # include cis::awslinux::2_1_12
-  # include cis::awslinux::2_1_13
-  # include cis::awslinux::2_1_14
-  # include cis::awslinux::2_1_15
-  # include cis::awslinux::2_1_16
-  # include cis::awslinux::2_1_17
-  # include cis::awslinux::2_1_18
-  # include cis::awslinux::2_1_1
-  # include cis::awslinux::2_1_2
-  # include cis::awslinux::2_1_3
-  # include cis::awslinux::2_1_4
-  # include cis::awslinux::2_1_5
-  # include cis::awslinux::2_1_6
-  # include cis::awslinux::2_1_7
-  # include cis::awslinux::2_1_8
-  # include cis::awslinux::2_1_9
-  # include cis::awslinux::3_16
-  # include cis::awslinux::3_1
-  # include cis::awslinux::3_2
-  # include cis::awslinux::3_3
-  # include cis::awslinux::3_5
-  # include cis::awslinux::3_6
+  include cis::awslinux::2_1_1
+  include cis::awslinux::2_1_2
+  include cis::awslinux::2_1_3
+  include cis::awslinux::2_1_4
+  include cis::awslinux::2_1_5
+  include cis::awslinux::2_1_6
+  include cis::awslinux::2_1_7
+  include cis::awslinux::2_1_8
+  include cis::awslinux::2_1_9
+  include cis::awslinux::2_1_10
+  include cis::awslinux::2_1_11
+  include cis::awslinux::2_1_12
+  include cis::awslinux::2_1_13
+  include cis::awslinux::2_1_14
+  include cis::awslinux::2_1_15
+  include cis::awslinux::2_1_16
+  include cis::awslinux::2_1_17
+  include cis::awslinux::2_1_18
+  include cis::awslinux::3_1
+  include cis::awslinux::3_2
+  include cis::awslinux::3_3
+  include cis::awslinux::3_5
+  include cis::awslinux::3_6
+  include cis::awslinux::3_16
   # include cis::awslinux::4_1_1
   # include cis::awslinux::4_1_2
   # include cis::awslinux::4_2_1

@@ -7,26 +7,48 @@
 #
 
 class cis::linuxcontrols::c0037 {
-  $ntpserver = hiera('cis::ntpserver',[ '0.pool.ntp.org', '1.pool.ntp.org',
-      '2.pool.ntp.org', '3.pool.ntp.org' ])
-
   package {'ntp':
     ensure => installed,
   }
 
-  file {'/etc/ntp.conf':
-    content => template('cis/el6/etc/ntp.conf.erb'),
-    owner   => root,
-    group   => root,
-    mode    => '0640',
-    notify  => Package['ntp'],
-  }
+  case $::operatingsystem {
+    'RedHat': { 
+      $ntpserver = hiera('cis::ntpserver',[ '0.pool.ntp.org', '1.pool.ntp.org',
+          '2.pool.ntp.org', '3.pool.ntp.org' ])
 
-  file {'/etc/sysconfig/ntpd':
-    source => 'puppet:///modules/cis/el6/etc/sysconfig/ntpd',
-    owner  => root,
-    group  => root,
-    mode   => '0640',
-    notify => Package['ntp'],
+      file {'/etc/ntp.conf':
+        content => template('cis/el6/etc/ntp.conf.erb'),
+        owner   => root,
+        group   => root,
+        mode    => '0640',
+        notify  => Package['ntp'],
+      }
+
+      file {'/etc/sysconfig/ntpd':
+        source => 'puppet:///modules/cis/el6/etc/sysconfig/ntpd',
+        owner  => root,
+        group  => root,
+        mode   => '0640',
+        notify => Package['ntp'],
+      }
+    }
+    'Amazon': {
+      file {'/etc/ntp.conf':
+        source => 'puppet:///modules/cis/awslinux/etc/ntp.conf',
+        owner   => root,
+        group   => root,
+        mode    => '0644',
+        notify  => Package['ntp'],
+      }
+
+      file {'/etc/sysconfig/ntpd':
+        source => 'puppet:///modules/cis/awslinux/etc/sysconfig/ntpd',
+        owner  => root,
+        group  => root,
+        mode   => '0644',
+        notify => Package['ntp'],
+      }
+    }
+    default: { fail("ERROR: unsupported OS = $::operatingsystem") }
   }
 }
