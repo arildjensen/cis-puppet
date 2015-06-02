@@ -38,4 +38,12 @@ class cis::linuxcontrols::c0000 {
   mount {'/dev/shm':
     options => 'nodev,nosuid,noexec',
   }
+
+  # 1.1.6
+  mount {'/var/tmp':
+    ensure  => 'mounted',
+    device  => '/tmp',
+    fstype  => 'none',
+    options => 'bind',
+  }
 }
