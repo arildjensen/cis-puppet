@@ -53,19 +53,19 @@ class cis::awslinux {
   include cis::awslinux::3_5
   include cis::awslinux::3_6
   include cis::awslinux::3_16
-  # include cis::awslinux::4_1_1
-  # include cis::awslinux::4_1_2
-  # include cis::awslinux::4_2_1
-  # include cis::awslinux::4_2_2
-  # include cis::awslinux::4_2_3
-  # include cis::awslinux::4_2_4
-  # include cis::awslinux::4_2_5
-  # include cis::awslinux::4_2_6
-  # include cis::awslinux::4_2_7
-  # include cis::awslinux::4_2_8
-  # include cis::awslinux::4_5_3
-  # include cis::awslinux::4_5_5
-  # include cis::awslinux::4_7
+  include cis::awslinux::4_1_1
+  include cis::awslinux::4_1_2
+  include cis::awslinux::4_2_1
+  include cis::awslinux::4_2_2
+  include cis::awslinux::4_2_3
+  include cis::awslinux::4_2_4
+  include cis::awslinux::4_2_5
+  include cis::awslinux::4_2_6
+  include cis::awslinux::4_2_7
+  include cis::awslinux::4_2_8
+  include cis::awslinux::4_4_3
+  include cis::awslinux::4_4_5
+  include cis::awslinux::4_6
   # include cis::awslinux::5_1_1
   # include cis::awslinux::5_1_2
   # include cis::awslinux::5_1_4
