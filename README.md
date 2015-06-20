@@ -5,6 +5,7 @@ Overview
 ========
  
 This module implements the Center for Internet Security (CIS) Security Configuration Benchmark for:
+- Amazon Linux 2014.09
 - Red Hat Enterprise Linux 6 v.1.4.0 
 - Red Hat Enterprise Linux 7 v.1.1.0
 
@@ -28,6 +29,7 @@ Also note that there are three subclasses in the cis module:
 - cis::linuxcontrols (implements the specific controls with a general name, e.g. cis::linuxcontrols::c0001, allowing for future re-use)
 - cis::el6 (maps directly to a specific CIS control for RHEL6, e.g. cis::el6::1_1_17 for control 1.1.17 in the benchmark)
 - cis::el7 (maps directly to a specific CIS control for RHEL7, e.g. cis::el6::4_7 for control 4.7 in the benchmark)
+- cis::awslinux (maps directly to a specific CIS control for AWS Linux)
 
 User-Controlled Settings
 ========================
