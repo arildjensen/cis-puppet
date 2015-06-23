@@ -3,7 +3,7 @@
 # This script is used by the cis Puppet module.
 # For the latest version see https://github.com/arildjensen/cis-puppet/
 
-COMMAND=`grep ^password /boot/grub/grub.conf 2>/dev/null`
+COMMAND=$(ps -eZ | egrep "initrc" | egrep -vw "tr|ps|egrep|bash|awk" | tr ':' ' ' | awk '{ print $NF }')
 
 if [ x$COMMAND = x ]; 
   then 

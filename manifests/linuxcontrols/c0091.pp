@@ -11,8 +11,9 @@ class cis::linuxcontrols::c0091 {
     owner  => root,
     group  => root,
     mode   => '0700',
-}
-  if $f0009 == 'fail' {
+  }
+
+  if $::f0009 == 'fail' {
     warning('Node $fqdn failed CIS RHEL6 Control 9.2.7 (f0009)')
   }
 }
