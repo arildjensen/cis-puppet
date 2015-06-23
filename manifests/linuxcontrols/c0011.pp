@@ -4,7 +4,7 @@
 #
 
 class cis::linuxcontrols::c0011 {
-  case $operatingsystemmajrelease {
+  case $::operatingsystemmajrelease {
     6: {
       file {'/etc/grub.conf':
         owner => root,
@@ -19,5 +19,6 @@ class cis::linuxcontrols::c0011 {
         mode  => '0600',
       }
     }
+    default: {}
   }
 }

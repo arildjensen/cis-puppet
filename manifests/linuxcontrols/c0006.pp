@@ -1,3 +1,4 @@
+# For setting GRUB passwords
 class cis::linuxcontrols::c0006 ( $grub_password = fqdn_rand_string(30) ){
 # CIS RHEL6 Control 1.4.1
 # CIS RHEL6 Control 5.2.3
@@ -16,6 +17,6 @@ class cis::linuxcontrols::c0006 ( $grub_password = fqdn_rand_string(30) ){
         mode    => '0600',
       }
     }
-    default: { fail("ERROR: unsupported OS = $::operatingsystem") }
+    default: { fail("ERROR: unsupported OS = ${::operatingsystem}") }
   }
 }

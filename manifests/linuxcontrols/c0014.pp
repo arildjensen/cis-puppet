@@ -14,11 +14,12 @@ class cis::linuxcontrols::c0014 {
   case $::operatingsystem {
     'Amazon': {
       file { '/etc/sysctl.conf':
-        source => 'puppet:///modules/cis/awslinux/etc/sysctl.conf',
+        source  => 'puppet:///modules/cis/awslinux/etc/sysctl.conf',
         owner   => root,
         group   => root,
         mode    => '0644',
       }
     }
+    default: {}
   }
 }

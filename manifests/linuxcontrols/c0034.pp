@@ -5,7 +5,7 @@
 
 class cis::linuxcontrols::c0034 {
   case $::operatingsystem {
-    'RedHat': { 
+    'RedHat': {
       package {'xorg-x11-libs':
         ensure => absent,
       }
@@ -17,11 +17,11 @@ class cis::linuxcontrols::c0034 {
 
       file { '/etc/inittab':
         source => 'puppet:///modules/cis/awslinux/etc/inittab',
-        owner   => root,
-        group   => root,
-        mode    => '0640',
+        owner  => root,
+        group  => root,
+        mode   => '0640',
       }
     }
-    default: { fail("ERROR: unsupported OS = $::operatingsystem") }
+    default: { fail("ERROR: unsupported OS = ${::operatingsystem}") }
   }
 }

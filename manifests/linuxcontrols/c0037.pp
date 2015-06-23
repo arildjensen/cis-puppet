@@ -12,7 +12,7 @@ class cis::linuxcontrols::c0037 {
   }
 
   case $::operatingsystem {
-    'RedHat': { 
+    'RedHat': {
       $ntpserver = hiera('cis::ntpserver',[ '0.pool.ntp.org', '1.pool.ntp.org',
           '2.pool.ntp.org', '3.pool.ntp.org' ])
 
@@ -34,7 +34,7 @@ class cis::linuxcontrols::c0037 {
     }
     'Amazon': {
       file {'/etc/ntp.conf':
-        source => 'puppet:///modules/cis/awslinux/etc/ntp.conf',
+        source  => 'puppet:///modules/cis/awslinux/etc/ntp.conf',
         owner   => root,
         group   => root,
         mode    => '0644',
@@ -49,6 +49,6 @@ class cis::linuxcontrols::c0037 {
         notify => Package['ntp'],
       }
     }
-    default: { fail("ERROR: unsupported OS = $::operatingsystem") }
+    default: { fail("ERROR: unsupported OS = ${::operatingsystem}") }
   }
 }

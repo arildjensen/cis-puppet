@@ -5,7 +5,7 @@
 
 class cis::linuxcontrols::c0038 {
   case $::operatingsystem {
-    'RedHat': { 
+    'RedHat': {
       file {'/etc/postfix/main.cf':
         source => 'puppet:///modules/cis/el6/etc/postfix/main.cf',
         owner  => root,
@@ -22,9 +22,9 @@ class cis::linuxcontrols::c0038 {
         notify => Service['sendmail'],
       }
 
-      service { 'sendmail': 
+      service { 'sendmail':
         enable  => true,
-        ensure  => 'running', 
+        ensure  => 'running',
       }
     }
     default: { fail("ERROR: unsupported OS = $::operatingsystem") }

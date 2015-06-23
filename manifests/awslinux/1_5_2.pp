@@ -4,8 +4,9 @@
 #
 
 class cis::awslinux::1_5_2   {
-  case $operatingsystem {
+  case $::operatingsystem {
     'Amazon': { include cis::linuxcontrols::c0006 }
+    default: {}
   }
   
 }
