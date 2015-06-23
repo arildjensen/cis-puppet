@@ -23,10 +23,10 @@ class cis::linuxcontrols::c0038 {
       }
 
       service { 'sendmail':
-        enable  => true,
-        ensure  => 'running',
+        ensure => 'running',
+        enable => true,
       }
     }
-    default: { fail("ERROR: unsupported OS = $::operatingsystem") }
+    default: { fail("ERROR: unsupported OS = ${::operatingsystem}") }
   }
 }

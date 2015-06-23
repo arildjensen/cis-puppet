@@ -34,11 +34,11 @@ class cis::linuxcontrols::c0037 {
     }
     'Amazon': {
       file {'/etc/ntp.conf':
-        source  => 'puppet:///modules/cis/awslinux/etc/ntp.conf',
-        owner   => root,
-        group   => root,
-        mode    => '0644',
-        notify  => Package['ntp'],
+        source => 'puppet:///modules/cis/awslinux/etc/ntp.conf',
+        owner  => root,
+        group  => root,
+        mode   => '0644',
+        notify => Package['ntp'],
       }
 
       file {'/etc/sysconfig/ntpd':

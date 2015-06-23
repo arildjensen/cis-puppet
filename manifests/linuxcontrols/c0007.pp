@@ -27,6 +27,6 @@ class cis::linuxcontrols::c0007 {
         require => Package['libselinux'],
       }
     }
-    default: { fail("ERROR: unsupported OS = $::operatingsystem") }
+    default: { fail("ERROR: unsupported OS = ${::operatingsystem}") }
   }
 }

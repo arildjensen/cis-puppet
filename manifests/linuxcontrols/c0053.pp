@@ -18,11 +18,13 @@
 #
 
 class cis::linuxcontrols::c0053 {
+  $file_source = $::hardwaremodel ? {
+    'x86_64' => 'puppet:///modules/cis/el6/etc/audit/audit.rules.64',
+    default  => 'puppet:///modules/cis/el6/etc/audit/audit.rules.32',
+  }
+
   file {'/etc/audit/audit.rules':
-    source => $hardwaremodel ? {
-      'x86_64' => 'puppet:///modules/cis/el6/etc/audit/audit.rules.64',
-      default  => 'puppet:///modules/cis/el6/etc/audit/audit.rules.32',
-    },
+    source => $file_source,
     owner  => root,
     group  => root,
     mode   => '0640',

@@ -32,5 +32,6 @@ class cis::linuxcontrols::c0004 {
       #   require => [ Exec['aide-initialize'], File['/etc/sysconfig/prelink'] ],
       # }
     }
+    default: {}
   }
 }

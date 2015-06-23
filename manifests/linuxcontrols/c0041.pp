@@ -6,7 +6,7 @@
 class cis::linuxcontrols::c0041 {
   case $::operatingsystem {
     'RedHat': {
-      case $operatingsystemmajrelease {
+      case $::operatingsystemmajrelease {
         6: {
           package {'iptables':
             ensure => installed,
@@ -31,6 +31,7 @@ class cis::linuxcontrols::c0041 {
             hasstatus  => true,
           }
         }
+        default: {}
       }
     }
     'Amazon': {
@@ -40,8 +41,8 @@ class cis::linuxcontrols::c0041 {
       }
 
       service { 'iptables':
-        ensure     => running,
-        enable     => true,
+        ensure => running,
+        enable => true,
       }
     }
   }

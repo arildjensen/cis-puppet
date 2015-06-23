@@ -21,6 +21,6 @@ class cis::linuxcontrols::c0003 {
         mode   => '0640',
       }
     }
-    default: { fail("ERROR: unsupported OS = $::operatingsystem") }
+    default: { fail("ERROR: unsupported OS = ${::operatingsystem}") }
   }
 }

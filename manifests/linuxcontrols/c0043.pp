@@ -5,7 +5,7 @@
 
 class cis::linuxcontrols::c0043 {
   service {'rsyslog':
-    enable => true,
     ensure => running,
+    enable => true,
   }
 }
