@@ -4,11 +4,25 @@
 #
 
 class cis::linuxcontrols::c0051 {
-  file {'/etc/audit/auditd.conf':
-    source => 'puppet:///modules/cis/el6/etc/audit/auditd.conf',
-    owner  => root,
-    group  => root,
-    mode   => '0640',
-    notify => Service['auditd'],
+case $::operatingsystem {
+    'RedHat': {
+      file {'/etc/audit/auditd.conf':
+        source => 'puppet:///modules/cis/el6/etc/audit/auditd.conf',
+        owner  => root,
+        group  => root,
+        mode   => '0640',
+        notify => Service['auditd'],
+      }
     }
+    'Amazon': {
+      file {'/etc/audit/auditd.conf':
+        source => 'puppet:///modules/cis/awslinux/etc/audit/auditd.conf',
+        owner  => root,
+        group  => root,
+        mode   => '0640',
+        notify => Service['auditd'],
+      }
+    }
+    default: { }
+  }
 }
