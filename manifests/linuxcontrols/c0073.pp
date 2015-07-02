@@ -6,10 +6,24 @@
 #
 
 class cis::linuxcontrols::c0073 {
-  file {'/etc/login.defs':
-    source => 'puppet:///modules/cis/el6/etc/login.defs',
-    owner  => root,
-    group  => root,
-    mode   => '0644',
+  case $::operatingsystem {
+    'RedHat': {
+      file {'/etc/login.defs':
+        source => 'puppet:///modules/cis/el6/etc/login.defs',
+        owner  => root,
+        group  => root,
+        mode   => '0644',
+      }
+    }
+    'Amazon': {
+      file {'/etc/login.defs':
+        source => 'puppet:///modules/cis/awslinux/etc/login.defs',
+        owner  => root,
+        group  => root,
+        mode   => '0644',
+      }
+    }
+    default: { fail("ERROR: unsupported OS = ${::operatingsystem}") }
   }
+
 }
