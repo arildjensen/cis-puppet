@@ -70,7 +70,7 @@ class cis::awslinux {
   include cis::awslinux::5_1_1
   include cis::awslinux::5_1_2
   include cis::awslinux::5_1_4
-  # include cis::awslinux::5_1_5
+  # include cis::awslinux::5_1_5      # 5.1.5 Configure rsyslog to Send Logs to a Remote Log Host
   include cis::awslinux::5_2_1_3
   include cis::awslinux::5_2_2
   include cis::awslinux::5_2_3
@@ -82,7 +82,7 @@ class cis::awslinux {
   include cis::awslinux::5_2_9
   include cis::awslinux::5_2_10
   include cis::awslinux::5_2_11
-  # include cis::awslinux::5_2_12
+  include cis::awslinux::5_2_12
   include cis::awslinux::5_2_13
   include cis::awslinux::5_2_14
   include cis::awslinux::5_2_15
