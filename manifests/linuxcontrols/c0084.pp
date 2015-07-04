@@ -6,14 +6,14 @@
 #
 
 class cis::linuxcontrols::c0084 {
-  file {'/usr/local/sbin/f0003.sh':
+  file { '/usr/local/sbin/f0003.sh':
     source => 'puppet:///modules/cis/linuxcontrols/scripts/f0003.sh',
     owner  => root,
     group  => root,
     mode   => '0700',
   }
 
-  cron {'f0003.sh':
+  cron { 'f0003.sh':
     command => '/usr/local/sbin/f0003.sh',
     user    => 'root',
     hour    => 3,
