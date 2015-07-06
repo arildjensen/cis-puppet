@@ -4,10 +4,23 @@
 #
 
 class cis::linuxcontrols::c0070 {
-  file {'/etc/sysconfig/authconfig':
-    source => 'puppet:///modules/cis/el6/etc/sysconfig/authconfig',
-    owner  => root,
-    group  => root,
-    mode   => '0644',
+  case $::operatingsystem {
+    'RedHat': {
+      file { '/etc/sysconfig/authconfig':
+        source => 'puppet:///modules/cis/el6/etc/sysconfig/authconfig',
+        owner  => root,
+        group  => root,
+        mode   => '0644',
+      }
+    }
+    'Amazon': {
+      file { '/etc/sysconfig/authconfig':
+        source => 'puppet:///modules/cis/awslinux/etc/sysconfig/authconfig',
+        owner  => root,
+        group  => root,
+        mode   => '0644',
+      }
+    }
+    default: { fail("ERROR: unsupported OS = ${::operatingsystem}") }
   }
 }

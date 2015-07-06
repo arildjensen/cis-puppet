@@ -6,14 +6,28 @@
 #
 
 class cis::linuxcontrols::c0071 {
-  file {'/etc/pam.d/system-auth':
+  file { '/etc/pam.d/system-auth':
     ensure => link,
     target => '/etc/pam.d/system-auth-ac',
   }
-  file {'/etc/pam.d/system-auth-ac':
-    source => 'puppet:///modules/cis/el6/etc/pam.d/system-auth-ac',
-    owner  => root,
-    group  => root,
-    mode   => '0644',
+
+  case $::operatingsystem {
+    'RedHat': {
+      file { '/etc/pam.d/system-auth-ac':
+        source => 'puppet:///modules/cis/el6/etc/pam.d/system-auth-ac',
+        owner  => root,
+        group  => root,
+        mode   => '0644',
+      }
+    }
+    'Amazon': {
+      file { '/etc/pam.d/system-auth-ac':
+        source => 'puppet:///modules/cis/awslinux/etc/pam.d/system-auth-ac',
+        owner  => root,
+        group  => root,
+        mode   => '0644',
+      }
+    }
+    default: { fail("ERROR: unsupported OS = ${::operatingsystem}") }
   }
 }

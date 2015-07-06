@@ -6,10 +6,10 @@ hiddenmenu
 
 title Amazon Linux 2014.09 (<%= @kernelrelease -%>)
 root (hd0,0)
-kernel /boot/vmlinuz-<%= @kernelrelease -%> root=LABEL=/ selinux=1 security=selinux enforcing=1 console=ttyS0 LANG=en_US.UTF-8 KEYTABLE=us
+kernel /boot/vmlinuz-<%= @kernelrelease -%> root=LABEL=/ audit=1 selinux=1 security=selinux enforcing=1 console=ttyS0 LANG=en_US.UTF-8 KEYTABLE=us
 initrd /boot/initramfs-<%= @kernelrelease -%>.img
 
 title Amazon Linux 2014.09 (3.14.27-25.47.amzn1.x86_64)
 root (hd0,0)
-kernel /boot/vmlinuz-3.14.27-25.47.amzn1.x86_64 root=LABEL=/ console=ttyS0
+kernel /boot/vmlinuz-3.14.27-25.47.amzn1.x86_64 root=LABEL=/ audit=1 console=ttyS0
 initrd /boot/initramfs-3.14.27-25.47.amzn1.x86_64.img

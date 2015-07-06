@@ -4,7 +4,8 @@
 #
 
 class cis::linuxcontrols::c0052 {
-  service {'auditd':
+  service { 'auditd':
+    ensure => running,
     enable => true,
-    }
+  }
 }

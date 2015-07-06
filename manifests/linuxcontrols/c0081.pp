@@ -4,7 +4,7 @@
 #
 
 class cis::linuxcontrols::c0081 {
-  file {'/etc/gshadow':
+  file { '/etc/gshadow':
     owner => root,
     group => root,
     mode  => '0000',

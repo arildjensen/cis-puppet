@@ -4,7 +4,7 @@
 #
 
 class cis::linuxcontrols::c0082 {
-  file {'/etc/group':
+  file { '/etc/group':
     owner => root,
     group => root,
     mode  => '0644',

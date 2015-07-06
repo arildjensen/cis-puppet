@@ -4,7 +4,7 @@
 #
 
 class cis::linuxcontrols::c0060 {
-  file {'/etc/cron.daily':
+  file { '/etc/cron.daily':
     owner => root,
     group => root,
     mode  => '0600',

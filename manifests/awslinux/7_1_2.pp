@@ -1,0 +1,9 @@
+# Class cis::awslinux::7_1_2
+#
+# CIS Security Benchmark for RHEL7
+#
+
+class cis::awslinux::7_1_2   {
+  # TODO
+  # include cis::linuxcontrols::c0073
+}
