@@ -5,7 +5,7 @@
 
 class cis::awslinux::1_5_1   {
   case $::operatingsystem {
-    'RedHat': { include cis::linuxcontrols::c0011 }
+    'RedHat', 'CentOS': { include cis::linuxcontrols::c0011 }
     'Amazon': { include cis::linuxcontrols::c0006 }
     default: {}
   }

@@ -5,7 +5,7 @@
 
 class cis::linuxcontrols::c0034 {
   case $::operatingsystem {
-    'RedHat': {
+    'RedHat', 'CentOS': {
       package {'xorg-x11-libs':
         ensure => absent,
       }

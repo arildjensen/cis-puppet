@@ -5,7 +5,7 @@
 
 class cis::linuxcontrols::c0038 {
   case $::operatingsystem {
-    'RedHat': {
+    'RedHat', 'CentOS': {
       file {'/etc/postfix/main.cf':
         source => 'puppet:///modules/cis/el6/etc/postfix/main.cf',
         owner  => root,

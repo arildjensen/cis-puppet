@@ -6,7 +6,7 @@
 
 class cis::linuxcontrols::c0013 {
   case $::operatingsystem {
-    'RedHat': {
+    'RedHat', 'CentOS': {
       file {'/etc/sysconfig/init':
         source => 'puppet:///modules/cis/el6/etc/sysconfig/init',
         owner  => root,
