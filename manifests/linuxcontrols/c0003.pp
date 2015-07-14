@@ -5,7 +5,7 @@
 #
 class cis::linuxcontrols::c0003 {
   case $::operatingsystem {
-    'RedHat': {
+    'RedHat', 'CentOS': {
       file {'/etc/yum.conf':
         source => 'puppet:///modules/cis/el6/etc/yum.conf',
         owner  => root,

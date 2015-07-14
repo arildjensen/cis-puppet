@@ -6,7 +6,7 @@
 
 class cis::linuxcontrols::c0007 {
   case $::operatingsystem {
-    'RedHat': {
+    'RedHat', 'CentOS': {
       file {'/etc/selinux/config':
         source => 'puppet:///modules/cis/el6/etc/selinux/config',
         owner  => root,

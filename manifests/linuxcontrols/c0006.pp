@@ -8,7 +8,7 @@ class cis::linuxcontrols::c0006 ( $grub_password = fqdn_rand_string(30) ){
 # }
 
   case $::operatingsystem {
-    'RedHat': { }
+    'RedHat', 'CentOS': { }
     'Amazon': {
       file {'/etc/grub.conf':
         content => template('cis/awslinux/etc/grub.conf.erb'),
