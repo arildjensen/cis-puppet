@@ -44,6 +44,6 @@ class cis::linuxcontrols::c0000 {
     ensure  => 'mounted',
     device  => '/tmp',
     fstype  => 'none',
-    options => 'bind',
+    options => 'bind,nodev,nosuid,noexec',
   }
 }
