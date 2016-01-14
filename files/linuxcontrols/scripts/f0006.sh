@@ -5,7 +5,7 @@
 
 COMMAND=`grep '^+:' /etc/shadow`
 
-if [ x$COMMAND == x ]; then 
+if [ "x$COMMAND" == "x" ]; then 
   echo pass;
 else 
   echo fail;

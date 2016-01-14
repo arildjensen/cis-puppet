@@ -5,7 +5,7 @@
 
 COMMAND=`egrep -v \"^\+\" /etc/passwd | awk -F: '($1!=\"root\" && $1!=\"sync\" && $1!=\"shutdown\" && $1!=\"halt\" && $3<500 && $7!=\"/sbin/nologin\") {print $1}' 2>/dev/null`
 
-if [ x$COMMAND = x ]; 
+if [ "x$COMMAND" = "x" ]; 
   then 
     echo pass; 
   else 

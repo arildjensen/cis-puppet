@@ -5,7 +5,7 @@
 
 COMMAND=`awk -F: '{if ($6=="") print $1}' /etc/passwd`
 
-if [ x$COMMAND = x ]; then
+if [ "x$COMMAND" = "x" ]; then
   echo "pass";
 else
   echo "fail";
