@@ -6,7 +6,7 @@
 FILES=`df --local -P | awk {'if (NR!=1) print $6'} | xargs -I '{}' find '{}' -xdev -nouser -ls`
 OUTFILE=/var/log/control_f0002
 
-if [ x$FILES == x ]; then 
+if [ "x$FILES" == "x" ]; then 
   # List of unowned files is empty, so that's a pass.
   echo pass > $OUTFILE; 
 else 

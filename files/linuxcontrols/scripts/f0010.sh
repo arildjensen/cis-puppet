@@ -8,7 +8,7 @@ COMMAND=`awk -F: '($3>499 && $7!=/sbin/nologin) {print $6}' /etc/passwd`
 RESULTS="pass"
 
 for dir in $COMMAND; do
-  if [ `find $dir -maxdepth 1 -type f -name ".*" -perm /g+w,o+w 2>/dev/null`x != x ]; then
+  if [ "`find $dir -maxdepth 1 -type f -name ".*" -perm /g+w,o+w 2>/dev/null`x" != "x" ]; then
     RESULTS="fail";
   fi;
 done
